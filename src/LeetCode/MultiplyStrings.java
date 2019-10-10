@@ -1,5 +1,10 @@
 package LeetCode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class MultiplyStrings {
     public static void main(String[] args) {
         MultiplyStrings solution = new MultiplyStrings();
@@ -7,51 +12,23 @@ public class MultiplyStrings {
     }
 
     public String multiply(String num1, String num2) {
-        CharSequence seq1 = num1;
-        CharSequence seq2 = num2;
-        StringBuilder resultBuilder = new StringBuilder();
-        int p1 = seq1.length();
-        int p2 = seq2.length();
-        int[] products = new int[Math.min(p1, p2)];
-        int resultLength = p1+p2-1;
-        int multP = 0;
-        int factor = 1;
-        int carryover = 0;
+        int m = num1.length(), n = num2.length();
+        int[] pos = new int[m + n];
 
-        //build array of products
-        for (int i = p1-1; i >= 0; i--) {
-            carryover = factor = 0;
-            int runningSum = 0;
-            for (int j = p2-1; j >= 0; j--) {
-                runningSum += (((Integer.valueOf(seq1.charAt(i)) * Integer.valueOf(seq2.charAt(j))) + carryover)%10)*factor;
-                carryover = (((Integer.valueOf(seq1.charAt(i)) * Integer.valueOf(seq2.charAt(j))) + carryover)/10)*factor;
-                factor++;
+        for(int i = m - 1; i >= 0; i--) {
+            for(int j = n - 1; j >= 0; j--) {
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int p1 = i + j, p2 = i + j + 1;
+                int sum = mul + pos[p2];
+
+                pos[p1] += sum / 10;
+                pos[p2] = (sum) % 10;
             }
-            products[multP++] = runningSum;
         }
 
-        carryover = 0;
-        int productLength = Integer.toString(products[0]).length();
-
-        //Build the result string
-        for (int i = 0; i < resultLength; i++) {
-            int sum = 0;
-            if (i < productLength) {
-                for (int j = 0; j <= i; j++) {
-                    sum += products[j] % ((j+1) * 10);
-                }
-            } else {
-                //start from i - (productLength - 1) and go to products.length-1;
-                for (int j = i - (productLength - 1); j < products.length; j++) {
-                    sum += products[j] % ((j+1) * 10);
-                }
-            }
-            int remainder = sum  + carryover % 10;
-            carryover = sum + carryover / 10;
-            resultBuilder.append(Integer.toString(remainder));
-        }
-        if (carryover != 0) resultBuilder.append(Integer.toString(carryover));
-        return resultBuilder.reverse().toString();
+        StringBuilder sb = new StringBuilder();
+        for(int p : pos) if(!(sb.length() == 0 && p == 0)) sb.append(p);
+        return sb.length() == 0 ? "0" : sb.toString();
     }
 }
 

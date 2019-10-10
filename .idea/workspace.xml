@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5bd914-08e1-42bb-841e-1c5d217712e7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Chapter9/Problem9_7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/CourseSchedule2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/MissingRanges.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/NextClosestTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playground/Chapter9/Problem9_6_Varient$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playground/Chapter9/Problem9_6_Varient$TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/playground/Chapter9/Problem9_6_Varient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playground/Chapter9/Problem9_6_Varient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter9/Problem9_6_Varient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter9/Problem9_6_Varient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/playground/LeetCode/MinWindowSubstring.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/playground/LeetCode/MinWindowSubstring.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCode/MultiplyStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/MultiplyStrings.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,15 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Prob79.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LeetCode/Prob79.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CombinationSum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LeetCode/CombinationSum.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,20 +31,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiplyStrings.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MultiplyStrings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LeetCode/MultiplyStrings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="253">
+              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddBinary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LeetCode/AddBinary.java">
+      <file leaf-file-name="MinWindowSubstring.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="535">
+              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MissingRanges.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/MissingRanges.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NextClosestTime.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/NextClosestTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Trie.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -93,24 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1909">
-              <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Problem2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Chapter6/Problem2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Example6.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Chapter18/Example6.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,7 +151,6 @@
         <option value="$PROJECT_DIR$/src/Problem785Varient1.java" />
         <option value="$PROJECT_DIR$/src/Chapter18/Example6.java" />
         <option value="$PROJECT_DIR$/src/Chapter6/Problem2.java" />
-        <option value="$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/LongestSubstringAtMostTwoChars.java" />
         <option value="$PROJECT_DIR$/src/Program.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/AddBinary.java" />
@@ -155,6 +161,9 @@
         <option value="$PROJECT_DIR$/src/Chapter9/Problem9_7.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/CourseSchedule2.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/MultiplyStrings.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/MissingRanges.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/NextClosestTime.java" />
       </list>
     </option>
   </component>
@@ -222,27 +231,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CourseSchedule2">
-    <configuration name="AddBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.AddBinary" />
-      <module name="playground" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="CombinationSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.CombinationSum" />
-      <module name="playground" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="Application.NextClosestTime">
     <configuration name="CourseSchedule2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LeetCode.CourseSchedule2" />
       <module name="playground" />
@@ -253,8 +242,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Prob79" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.Prob79" />
+    <configuration name="MinWindowSubstring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.MinWindowSubstring" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
@@ -263,8 +252,28 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="RotatedSortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.RotatedSortedArray" />
+    <configuration name="MissingRanges" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.MissingRanges" />
+      <module name="playground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="MultiplyStrings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.MultiplyStrings" />
+      <module name="playground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="NextClosestTime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.NextClosestTime" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
@@ -274,19 +283,19 @@
       </extension>
     </configuration>
     <list>
-      <item itemvalue="Application.AddBinary" />
-      <item itemvalue="Application.RotatedSortedArray" />
-      <item itemvalue="Application.CombinationSum" />
-      <item itemvalue="Application.Prob79" />
       <item itemvalue="Application.CourseSchedule2" />
+      <item itemvalue="Application.MultiplyStrings" />
+      <item itemvalue="Application.MinWindowSubstring" />
+      <item itemvalue="Application.MissingRanges" />
+      <item itemvalue="Application.NextClosestTime" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NextClosestTime" />
+        <item itemvalue="Application.MissingRanges" />
+        <item itemvalue="Application.MinWindowSubstring" />
+        <item itemvalue="Application.MultiplyStrings" />
         <item itemvalue="Application.CourseSchedule2" />
-        <item itemvalue="Application.Prob79" />
-        <item itemvalue="Application.CombinationSum" />
-        <item itemvalue="Application.RotatedSortedArray" />
-        <item itemvalue="Application.AddBinary" />
       </list>
     </recent_temporary>
   </component>
@@ -312,14 +321,14 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21878862" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21631645" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49525318" visible="true" weight="0.17739628" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49525318" visible="true" weight="0.17739628" />
       <window_info id="Structure" order="1" sideWeight="0.50474685" side_tool="true" weight="0.16595136" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5241038" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4326329" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3297568" />
@@ -336,18 +345,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/LongestSubstringAtMostTwoChars.java</url>
           <line>19</line>
@@ -384,28 +381,26 @@
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="30" />
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BinarySearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Problem74.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -609,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Trie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NumberOfIslands.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -668,13 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
@@ -757,10 +738,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Trie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LeetCode/MultiplyStrings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="253">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/MissingRanges.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/NextClosestTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
