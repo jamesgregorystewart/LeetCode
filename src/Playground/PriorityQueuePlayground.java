@@ -1,6 +1,5 @@
 package Playground;
 
-import java.util.Comparator;
 import java.util.Objects;
 import java.util.PriorityQueue;
 
@@ -14,9 +13,11 @@ public class PriorityQueuePlayground {
 
     public void normalBody() {
         PriorityQueue<Integer> queue = new PriorityQueue<>(5, (a, b) -> {
-            if (a % 2 == b % 2) Integer.compare(a, b);
-            if (a % 2 == 1 && b % 2 == 0) return -1;
+            if (a%2 == 0) return -1;
             return 0;
+//            if (a % 2 == b % 2) Integer.compare(a, b);
+//            if (a % 2 == 1 && b % 2 == 0) return -1;
+//            return 0;
         });
 
         queue.add(1);
