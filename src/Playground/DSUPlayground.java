@@ -20,9 +20,9 @@ public class DSUPlayground {
         public boolean union(int x, int y) {
             int xr = find(x), yr = find(y);
             if (xr == yr) return false;
-            if (xr < yr)
+            if (rank[xr] < rank[yr])
                 parent[xr] = yr;
-            else if (yr < xr)
+            else if (rank[yr] < rank[xr])
                 parent[yr] = xr;
             else {
                 parent[yr] = xr;

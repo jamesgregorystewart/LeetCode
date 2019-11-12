@@ -1,5 +1,6 @@
 package Playground;
 
+import java.awt.*;
 import java.util.Objects;
 import java.util.PriorityQueue;
 
@@ -7,8 +8,13 @@ public class PriorityQueuePlayground {
 
     public static void main(String[] args) {
 
+        PriorityQueue<Integer> q = new PriorityQueue<>();
+        q.add(3);
+        q.poll();
+        System.out.println(Integer.toHexString(13));
+
         PriorityQueuePlayground program = new PriorityQueuePlayground();
-        program.normalBody();
+//        program.normalBody();
     }
 
     public void normalBody() {
