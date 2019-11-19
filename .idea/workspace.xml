@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5bd914-08e1-42bb-841e-1c5d217712e7" name="Default" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Playground/Runner.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/HappyNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/playground$Program.ic" NAME="Program Coverage Results" MODIFIED="1568826216389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TimeMap.java" pinned="false" current-in-tab="false">
@@ -125,6 +129,8 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -132,14 +138,10 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>treeSize</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -197,11 +199,15 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
+  <component name="ProjectId" id="1ThkbK0okHYC3OQ0hy77NGsQ8IN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -267,9 +273,11 @@
       </pane>
     </panes>
   </component>
+=======
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -283,9 +291,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamGround">
-    <configuration name="MinDominoRotationsEqualRow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.MinDominoRotationsEqualRow" />
+  <component name="RunManager" selected="Application.HappyNumber">
+    <configuration name="AddBinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.AddBinary" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
@@ -293,61 +301,76 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Prob1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CompanyTests.AQR.Prob1" />
+    <configuration name="CombinationSum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.CombinationSum" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CompanyTests.AQR.*" />
+          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Prob2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CompanyTests.AQR.Prob2" />
+    <configuration name="HappyNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.HappyNumber" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CompanyTests.AQR.*" />
+          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="Prob3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CompanyTests.AQR.Prob3" />
+    <configuration name="Prob79" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Prob79" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CompanyTests.AQR.*" />
+          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="StreamGround" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Playground.StreamGround" />
+    <configuration name="RotatedSortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.RotatedSortedArray" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Playground.*" />
+          <option name="PATTERN" value="LeetCode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MinDominoRotationsEqualRow" />
-      <item itemvalue="Application.Prob1" />
-      <item itemvalue="Application.Prob2" />
-      <item itemvalue="Application.Prob3" />
-      <item itemvalue="Application.StreamGround" />
+      <item itemvalue="Application.AddBinary" />
+      <item itemvalue="Application.RotatedSortedArray" />
+      <item itemvalue="Application.CombinationSum" />
+      <item itemvalue="Application.Prob79" />
+      <item itemvalue="Application.HappyNumber" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StreamGround" />
-        <item itemvalue="Application.Prob2" />
-        <item itemvalue="Application.Prob3" />
-        <item itemvalue="Application.Prob1" />
-        <item itemvalue="Application.MinDominoRotationsEqualRow" />
+        <item itemvalue="Application.HappyNumber" />
+        <item itemvalue="Application.Prob79" />
+        <item itemvalue="Application.CombinationSum" />
+        <item itemvalue="Application.RotatedSortedArray" />
+        <item itemvalue="Application.AddBinary" />
       </list>
     </recent_temporary>
   </component>
@@ -364,6 +387,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
@@ -394,199 +418,56 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/LongestSubstringAtMostTwoChars.java</url>
           <line>19</line>
-          <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/AddBinary.java</url>
           <line>17</line>
-          <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/CombinationSum.java</url>
           <line>21</line>
-          <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/Prob79.java</url>
           <line>31</line>
-          <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/LeetCode/Prob79.java</url>
           <line>49</line>
-          <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/CourseSchedule2.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MinWindowSubstring.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/ExpressiveWords.java</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/ExpressiveWords.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MaxDistClosestPerson.java</url>
-          <line>10</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/FindKClosestElements.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/FindKClosestElements.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/FindKClosestElements.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/SearchSortedArrayOfUnknownSize.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/ValidPerfectSquare.java</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/InorderSuccessor.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/GroupAnagrams.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/WordSearchII.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/WordSearchII.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/LargestNumAtLeastTwiceOthers.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/LargestNumAtLeastTwiceOthers.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LeetCode/MaximalSquare.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Playground/StreamGround.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LeetCode/DeserializeNodes.java</url>
-          <line>19</line>
-          <properties class="LeetCode.DeserializeNodes" method="deserializeHelper">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
       </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="93" />
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LeetCode/ParitionLabels.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -939,4 +820,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
 </project>
