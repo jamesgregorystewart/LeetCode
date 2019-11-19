@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5bd914-08e1-42bb-841e-1c5d217712e7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/CampusBikes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MaximalSquare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MinDominoRotationsEqualRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/StringTransformsIntoAnotherString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/TimeMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Playground/StreamGround.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playground/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,40 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CampusBikes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LeetCode/CampusBikes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="23" column="23" selection-start-line="23" selection-end-line="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringTransformsIntoAnotherString.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LeetCode/StringTransformsIntoAnotherString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MinDominoRotationsEqualRow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LeetCode/MinDominoRotationsEqualRow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TimeMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LeetCode/TimeMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="368">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StreamGround.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StreamGround.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Playground/StreamGround.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="759">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,10 +81,40 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="LoggerRateLimiter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Playground/Runner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsSubtreeSame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CompanyTests/Amazon/IsSubtreeSame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PriorityQueuePlayground.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Playground/PriorityQueuePlayground.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1265">
+            <state relative-caret-position="1311">
               <caret line="57" selection-start-line="57" selection-end-line="63" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,9 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Playground/PriorityQueuePlayground.java" />
-        <option value="$PROJECT_DIR$/src/CompanyTests/Virtu3.java" />
-        <option value="$PROJECT_DIR$/src/CompanyTests/Virtu5.java" />
         <option value="$PROJECT_DIR$/src/CompanyTests/Virtu4.java" />
         <option value="$PROJECT_DIR$/src/CompanyTests/AmazonPhone.java" />
         <option value="$PROJECT_DIR$/src/LeetCode/TwoSumLessThanK.java" />
@@ -198,14 +191,15 @@
         <option value="$PROJECT_DIR$/src/CompanyTests/AQR/Prob1.java" />
         <option value="$PROJECT_DIR$/src/CompanyTests/AQR/Prob2.java" />
         <option value="$PROJECT_DIR$/src/Playground/StreamGround.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java" />
+        <option value="$PROJECT_DIR$/src/Playground/Runner.java" />
+        <option value="$PROJECT_DIR$/src/CompanyTests/Amazon/IsSubtreeSame.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-254" />
-    <option name="y" value="-1080" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -213,6 +207,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,6 +226,13 @@
               <item name="playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CompanyTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="playground" type="b2602c69:ProjectViewProjectNode" />
+              <item name="playground" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="CompanyTests" type="462c0819:PsiDirectoryNode" />
+              <item name="Amazon" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="playground" type="b2602c69:ProjectViewProjectNode" />
@@ -256,20 +259,12 @@
               <item name="playground" type="b2602c69:ProjectViewProjectNode" />
               <item name="playground" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="playground" type="b2602c69:ProjectViewProjectNode" />
-              <item name="playground" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Playground" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,26 +365,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-254" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32861477" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Run" order="6" sideWeight="0.49773756" visible="true" weight="0.29659212" />
+      <window_info anchor="right" id="Run" order="6" sideWeight="0.49773756" weight="0.29659212" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49525318" visible="true" weight="0.17625134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49525318" visible="true" weight="0.24105866" />
       <window_info id="Structure" order="1" sideWeight="0.50474685" side_tool="true" weight="0.16595136" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="2" visible="true" weight="0.32962587" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.32962587" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32861477" />
       <window_info anchor="right" x="0" y="0" width="310" height="700" id="Documentation" order="7" sideWeight="0.5022625" side_tool="true" visible="true" weight="0.29659212" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
@@ -592,30 +588,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/ExpressiveWords.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/FindKClosestElements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LeetCode/KthLargestElementInStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LeetCode/ParitionLabels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -641,9 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="25" column="27" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="25" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -862,7 +831,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LeetCode/CampusBikes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
+        <state relative-caret-position="529">
           <caret line="23" column="23" selection-start-line="23" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -886,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LeetCode/TimeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="368">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -906,7 +875,7 @@
     <entry file="file://$PROJECT_DIR$/src/CompanyTests/AQR/Prb2.java" />
     <entry file="file://$PROJECT_DIR$/src/Playground/PriorityQueuePlayground.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
+        <state relative-caret-position="1311">
           <caret line="57" selection-start-line="57" selection-end-line="63" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -937,11 +906,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Playground/StreamGround.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="759">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Playground/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CompanyTests/Amazon/IsSubtreeSame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
