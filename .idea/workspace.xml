@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5bd914-08e1-42bb-841e-1c5d217712e7" name="Default" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/LeetCode/LoggerRateLimiter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Playground/Runner.java" afterDir="false" />
-=======
       <change afterPath="$PROJECT_DIR$/src/LeetCode/HappyNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +17,6 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/playground$Program.ic" NAME="Program Coverage Results" MODIFIED="1568826216389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TimeMap.java" pinned="false" current-in-tab="false">
@@ -129,8 +125,6 @@
       </file>
     </leaf>
   </component>
-=======
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -141,7 +135,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -199,15 +192,12 @@
       </list>
     </option>
   </component>
-=======
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectId" id="1ThkbK0okHYC3OQ0hy77NGsQ8IN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -273,8 +263,6 @@
       </pane>
     </panes>
   </component>
-=======
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -387,7 +375,6 @@
     </task>
     <servers />
   </component>
-<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
@@ -418,7 +405,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-=======
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -429,7 +415,6 @@
         </entry>
       </map>
     </option>
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -467,7 +452,6 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
-<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LeetCode/ParitionLabels.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -820,6 +804,4 @@
       </provider>
     </entry>
   </component>
-=======
->>>>>>> 73e37f23bbec4d7b3d33067b26cf026e44a50ce8
 </project>
