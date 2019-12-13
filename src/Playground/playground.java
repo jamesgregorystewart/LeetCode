@@ -11,9 +11,55 @@ public class playground {
     }
 
     public void run() {
-        String str = "and";
-        for (int i = 0; i < str.length(); i++) {
-            System.out.println(str.substring(0, i) + str.substring(i+1));
+
+        PriorityQueue<Coordinate> q = new PriorityQueue<>(new Comparator<Coordinate>() {
+            @Override
+            public int compare(Coordinate o1, Coordinate o2) {
+                return 0;
+            }
+        });
+
+//        System.out.println(0 == 0.0);
+
+        new Thread() {
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("you're awesome");
+                    } catch (InterruptedException e) {
+                        System.out.println("Thread interrupted.");
+                    }
+                }
+            }
+        }.start();
+        try {
+            Thread.sleep(500);
+        } catch(InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        new Thread() {
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.println("No, YOUR'RE awesome!");
+                    } catch (InterruptedException e) {
+                        System.out.println("Thread interrupted.");
+                    }
+                }
+            }
+        }.start();
+
+    }
+
+    class Coordinate implements Comparable<Coordinate> {
+        int x;
+        int y;
+
+        @Override
+        public int compareTo(Coordinate o) {
+            return 0;
         }
     }
 }

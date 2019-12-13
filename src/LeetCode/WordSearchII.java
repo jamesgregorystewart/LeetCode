@@ -83,7 +83,15 @@ public class WordSearchII {
 
         @Override
         public int hashCode() {
-            return x.hashCode() ^ y.hashCode();
+            return Integer.hashCode(x) ^ Integer.hashCode(y);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (o == null) return false;
+            if (o == this) return true;
+            Coordinate that = (Coordinate) o;
+            return this.x == that.x && this.y == that.y;
         }
     }
 
