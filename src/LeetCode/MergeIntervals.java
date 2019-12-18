@@ -1,70 +1,81 @@
-//package LeetCode;
-//
-//import java.util.*;
-//import java.util.List;
-//
-//public class MergeIntervals {
-//
-//    public static void main(String[] args) {
-//        MergeIntervals solution = new MergeIntervals();
-//        //{1,3},{2,6},{8,10},{15,18}
-//        int[][] result = solution.merge(new int[][] {{1,4},{4,5}});
-//        for (int[] interval : result) {
-//            System.out.println(interval[0] + " " + interval[1]);
-//        }
-//    }
-//
-//    public int[][] merge(int[][] intervals) {
-//        if (intervals.length == 0 || intervals[0].length == 0) return new int[][] {{}};
-//
-//        Comparator<int[]> comparator = new Comparator<int[]>() {
-//            @Override
-//            public int compare(int[] o1, int[] o2) {
-//                if (o1[0] < o2[0]) return -1;
-//                return 0;
-//            }
-//        };
-//
-//        Arrays.sort(intervals, comparator);
-//        List<List<Integer>> result = new ArrayList<>();
-//
-//        //O(N) where N = number of intervals to merge
-//        boolean waiting = false;
-//        List<Integer> interval;
-//        int maxR;
-//        for (int i = 0; i < intervals.length-1; i++) {
-//            if (!waiting) {
-//                interval = new ArrayList<>();
-//                interval.add(intervals[i][0]);
-//                if (intervals[i+1][0] > intervals[i][1]) {
-//                    interval.add(intervals[i][1]);
-//                } else waiting = true;
-//                result.add(interval);
-//            } else if (intervals[i+1][0] > intervals[i][1]) { //stop waiting and finish the interval
-//                result.get(result.size()-1).add(intervals[i][1]);
-//                waiting = false;
-//            }
-//        }
-//
-//        //waiting for the last range digit to complete
-//        else if (result.size() > 0 && result.get(result.size()-1).size() == 1) {
-//            if (intervals[intervals.length-1][1] < intervals[intervals.length-2][1])
-//                result.get(result.size()-1).add(intervals[intervals.length-2][1]);
-//            result.get(result.size()-1).add(intervals[intervals.length-1][1]);
-//        }
-//        else {
-//            List<Integer> tmp = new ArrayList<>();
-//            tmp.add(intervals[intervals.length-1][0]);
-//            tmp.add(intervals[intervals.length-1][1]);
-//            result.add(tmp);
-//        }
-//
-//        //O(N) to put into the return type
-//        int[][] ans = new int[result.size()][2];
-//        for (int i = 0; i < result.size(); i++) {
-//            ans[i][0] = result.get(i).get(0);
-//            ans[i][1] = result.get(i).get(1);
-//        }
-//        return ans;
-//    }
-//}
+package LeetCode;
+
+import java.util.*;
+import java.util.List;
+
+public class MergeIntervals {
+
+    public static void main(String[] args) {
+        MergeIntervals solution = new MergeIntervals();
+        //{1,3},{2,6},{8,10},{15,18}
+        int[][] result = solution.merge(new int[][] {{1,3},{2,6},{8,10},{15,18}});
+        for (int[] interval : result) {
+            System.out.println(interval[0] + " " + interval[1]);
+        }
+    }
+
+    /*
+    * Given a collection of intervals, merge all overlapping intervals.
+
+    Example 1:
+
+    Input: [[1,3],[2,6],[8,10],[15,18]]
+    Output: [[1,6],[8,10],[15,18]]
+    Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+    Example 2:
+
+    Input: [[1,4],[4,5]]
+    Output: [[1,5]]
+    Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+    NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
+    *
+    * */
+
+    //TODO: Do a max overlap problem like this but counting max at same time -> would be equivalent to "how many conference rooms are needed to
+    //schedule all meetings
+
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length == 0) return new int[][] {{}};
+        List<int[]> mergedIntervals = new ArrayList<>();
+        //sort intervals in order of their start time
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] - o2[0];
+            }
+        });
+
+        //process intervals
+        int[] curr = intervals[0];
+        if (intervals.length == 1) mergedIntervals.add(curr);
+
+        for (int[] interval : intervals) {
+            if (curr == null) curr = interval;
+            //merge intervals
+            if (interval[0] <= curr[1]) {
+                System.out.println("end point "+curr[1]+" updating to "+interval[1]);
+                curr[1] = interval[1];
+            }
+            //have a finished interval
+            else {
+                System.out.println("saving ["+curr[0]+","+curr[1]+"]");
+                System.out.println("updating curr to ["+interval[0]+","+interval[1]+"]");
+                mergedIntervals.add(curr);
+                curr = interval;
+            }
+        }
+        if (mergedIntervals.size() == 0 ||
+                mergedIntervals.get(mergedIntervals.size()-1)[1] != curr[1])
+            mergedIntervals.add(curr);
+
+        //put answer into return format
+        int[][] ans = new int[mergedIntervals.size()][2];
+        int idx = 0;
+        for (int[] interval : mergedIntervals) {
+            ans[idx][0] = interval[0];
+            ans[idx++][1] = interval[1];
+
+        }
+        return ans;
+    }
+}
