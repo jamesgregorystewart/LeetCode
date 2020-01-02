@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da5bd914-08e1-42bb-841e-1c5d217712e7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/FindTheCelebrity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/FloodFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/InvertBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/LowestCommonAncestorOfBinaryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MaxAreaOfIsland.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MaxConferenceRooms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MaximalRectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/MedianOfTwoSortedArrays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/PopulatingNextRightPointers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/PopulatingNextRightPointersII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/RemoveInvalidParantheses.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/Search2DMatrixII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/UTF8Validation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LeetCode/VerifyPreorderSequenceInBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/BuildBinaryTreePostorderInorder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/GenerateParentheses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/LongestValidParentheses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LeetCode/MoveZeros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playground/Battleship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Playground/TreeMapPlayground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utility/BinaryTreeTraverser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utility/TreeDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Utility/TreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeetCode/HappyNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/HappyNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeetCode/MergeIntervals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode/MergeIntervals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Playground/playground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Playground/playground.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +47,9 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
-  <component name="RunManager" selected="Application.MaxAreaOfIsland">
-    <configuration name="HappyNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.HappyNumber" />
+  <component name="RunManager" selected="Application.GenerateParentheses">
+    <configuration name="GenerateParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.GenerateParentheses" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
@@ -67,8 +61,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxAreaOfIsland" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.MaxAreaOfIsland" />
+    <configuration name="LongestValidParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.LongestValidParentheses" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
@@ -80,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaxConferenceRooms" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.MaxConferenceRooms" />
+    <configuration name="NumberOfRectangles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CompanyTests.Amazon.NumberOfRectangles" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
+          <option name="PATTERN" value="CompanyTests.Amazon.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeIntervals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LeetCode.MergeIntervals" />
+    <configuration name="NumberOfTriangles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CompanyTests.Amazon.NumberOfTriangles" />
       <module name="playground" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="LeetCode.*" />
+          <option name="PATTERN" value="CompanyTests.Amazon.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,19 +114,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.HappyNumber" />
+      <item itemvalue="Application.LongestValidParentheses" />
+      <item itemvalue="Application.NumberOfTriangles" />
+      <item itemvalue="Application.NumberOfRectangles" />
       <item itemvalue="Application.playground" />
-      <item itemvalue="Application.MergeIntervals" />
-      <item itemvalue="Application.MaxConferenceRooms" />
-      <item itemvalue="Application.MaxAreaOfIsland" />
+      <item itemvalue="Application.GenerateParentheses" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MaxAreaOfIsland" />
-        <item itemvalue="Application.MaxConferenceRooms" />
-        <item itemvalue="Application.MergeIntervals" />
-        <item itemvalue="Application.HappyNumber" />
+        <item itemvalue="Application.GenerateParentheses" />
         <item itemvalue="Application.playground" />
+        <item itemvalue="Application.NumberOfRectangles" />
+        <item itemvalue="Application.NumberOfTriangles" />
+        <item itemvalue="Application.LongestValidParentheses" />
       </list>
     </recent_temporary>
   </component>
@@ -179,30 +173,50 @@
       <screen x="-258" y="-1080" width="1920" height="1080" />
     </state>
     <state x="548" y="-645" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576082017468" />
-    <state width="325" height="749" key="GridCell.Tab.0.bottom" timestamp="1576437542872">
+    <state x="408" y="192" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577573108023">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="408" y="192" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1577573108023" />
+    <state width="178" height="242" key="GridCell.Tab.0.bottom" timestamp="1577948791247">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="376" height="297" key="GridCell.Tab.0.bottom/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576173485759" />
-    <state width="325" height="749" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576437542872" />
-    <state width="249" height="234" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576357700597" />
-    <state width="325" height="749" key="GridCell.Tab.0.center" timestamp="1576437542871">
+    <state width="178" height="242" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577948791247" />
+    <state width="325" height="749" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1576870673195" />
+    <state width="178" height="242" key="GridCell.Tab.0.center" timestamp="1577948791246">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="376" height="297" key="GridCell.Tab.0.center/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576173485757" />
-    <state width="325" height="749" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576437542871" />
-    <state width="249" height="234" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576357700596" />
-    <state width="325" height="749" key="GridCell.Tab.0.left" timestamp="1576437542871">
+    <state width="178" height="242" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1577948791246" />
+    <state width="325" height="749" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1576870673194" />
+    <state width="178" height="242" key="GridCell.Tab.0.left" timestamp="1577948791245">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="376" height="297" key="GridCell.Tab.0.left/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576173485756" />
-    <state width="325" height="749" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576437542871" />
-    <state width="249" height="234" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576357700592" />
-    <state width="325" height="749" key="GridCell.Tab.0.right" timestamp="1576437542872">
+    <state width="178" height="242" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1577948791245" />
+    <state width="325" height="749" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1576870673194" />
+    <state width="178" height="242" key="GridCell.Tab.0.right" timestamp="1577948791246">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="376" height="297" key="GridCell.Tab.0.right/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576173485758" />
-    <state width="325" height="749" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576437542872" />
-    <state width="249" height="234" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576357700597" />
+    <state width="178" height="242" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1577948791246" />
+    <state width="325" height="749" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1576870673195" />
+    <state width="1398" height="103" key="GridCell.Tab.1.bottom" timestamp="1577939487589">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="103" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577939487589" />
+    <state width="1398" height="103" key="GridCell.Tab.1.center" timestamp="1577939487589">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="103" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1577939487589" />
+    <state width="1398" height="103" key="GridCell.Tab.1.left" timestamp="1577939487588">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="103" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1577939487588" />
+    <state width="1398" height="103" key="GridCell.Tab.1.right" timestamp="1577939487589">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="103" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1577939487589" />
     <state x="443" y="88" key="SettingsEditor" timestamp="1576251624865">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -212,11 +226,11 @@
       <screen x="-258" y="-1080" width="1920" height="1080" />
     </state>
     <state x="373" y="-794" width="657" height="508" key="find.popup/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576203106171" />
-    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup" timestamp="1576519884601">
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup" timestamp="1577912864313">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="367" y="-839" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-258.-1080.1920.1080@-258.-1080.1920.1080" timestamp="1576084793463" />
-    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1576519884601" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1577912864313" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

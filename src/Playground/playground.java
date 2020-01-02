@@ -1,5 +1,8 @@
 package Playground;
 
+import Utility.TreeDeserializer;
+import Utility.TreeNode;
+
 import java.util.*;
 
 public class playground {
@@ -12,54 +15,22 @@ public class playground {
 
     public void run() {
 
-        PriorityQueue<Coordinate> q = new PriorityQueue<>(new Comparator<Coordinate>() {
-            @Override
-            public int compare(Coordinate o1, Coordinate o2) {
-                return 0;
-            }
-        });
+//        TreeDeserializer treeDeserializer = new TreeDeserializer();
+//        TreeNode root = treeDeserializer.deserialize(new String[] {"1", "3", "2", null, "4", null, "5"});
 
-//        System.out.println(0 == 0.0);
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(6);
+        list.add(5);
+        list.add(4);
+        System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
 
-        new Thread() {
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                        System.out.println("you're awesome");
-                    } catch (InterruptedException e) {
-                        System.out.println("Thread interrupted.");
-                    }
-                }
-            }
-        }.start();
-        try {
-            Thread.sleep(500);
-        } catch(InterruptedException e) {
-            System.out.println(e.getMessage());
-        }
-        new Thread() {
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                        System.out.println("No, YOUR'RE awesome!");
-                    } catch (InterruptedException e) {
-                        System.out.println("Thread interrupted.");
-                    }
-                }
-            }
-        }.start();
-
+        char c = '3';
+        System.out.println(c - '0');
     }
 
-    class Coordinate implements Comparable<Coordinate> {
-        int x;
-        int y;
-
-        @Override
-        public int compareTo(Coordinate o) {
-            return 0;
-        }
-    }
 }
