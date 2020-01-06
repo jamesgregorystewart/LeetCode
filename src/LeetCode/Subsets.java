@@ -11,19 +11,28 @@ public class Subsets {
         System.out.println(solution.subsets(new int[] {1,2,3}));
     }
 
-    public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(result, new ArrayList<>(), nums, 0);
-        return result;
-    }
+    /*
+    * Given a set of distinct integers, nums, return all possible subsets (the power set).
 
-    public void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] nums, int start) {
-        result.add(new ArrayList<>(tempList));
-        for (int i = start; i < nums.length; i++) {
-            tempList.add(nums[i]);
-            backtrack(result, tempList, nums, i + 1);
-            tempList.remove(tempList.size() - 1);
-        }
+    Note: The solution set must not contain duplicate subsets.
+
+    Example:
+
+    Input: nums = [1,2,3]
+    Output:
+    [
+      [3],
+      [1],
+      [2],
+      [1,2,3],
+      [1,3],
+      [2,3],
+      [1,2],
+      []
+    ]
+    * */
+
+    public List<List<Integer>> subsets(int[] nums) {
+        return null;
     }
 }
