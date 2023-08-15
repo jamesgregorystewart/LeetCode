@@ -28,7 +28,7 @@ O(n) / O(n)
 Idea: create two maps of char counts to compare for equivalence
 
 1) check length
-2) iterate pointer through strings and maintain two hashmaps of char counts
+2) iterate pointer through strings and maintain two hashmaps of char counts 
 
 '''
 
