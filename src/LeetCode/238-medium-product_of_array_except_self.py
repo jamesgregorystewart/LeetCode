@@ -28,7 +28,7 @@
 '''
 Idea: create total product of all nums, keep count of zeros, keep count of negatives
 
-O(n*m) / O(1)
+O(nlog(m)) / O(1)
 '''
 
 from typing import List
@@ -81,6 +81,23 @@ class Solution:
 
 
 solution = Solution()
-print(solution.productExceptSelf(nums = [1,2,3,4]))
-print(solution.productExceptSelf(nums = [1,-1]))
-print(solution.productExceptSelf(nums = [-1,1,0,-3,3]))
+# print(solution.productExceptSelf(nums = [1,2,3,4]))
+# print(solution.productExceptSelf(nums = [1,-1]))
+# print(solution.productExceptSelf(nums = [-1,1,0,-3,3]))
+
+class SolutionNSpeed:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        ans = [1] * len(nums)
+       
+        left, right = 1, 1
+        for i in range(len(nums)):
+            ans[i] *= left
+            ans[~i] *= right
+            
+            left *= nums[i]
+            right *= nums[~i]
+            
+        return ans
+
+solution_n_speed = SolutionNSpeed()
+print(solution_n_speed.productExceptSelf(nums = [1,2,3,4]))
