@@ -58,3 +58,14 @@ print(is_power_of_two(2))
 print(is_power_of_two(3))
 print(is_power_of_two(64))
 print(is_power_of_two(77))
+print("\n-------------------\n")
+
+
+# Random bitwise stuff
+
+def iterate_bits(x: int) -> None:
+    print("Iterate Bits")
+    for b in bin(x):
+        print(b)
+
+iterate_bits(11)
