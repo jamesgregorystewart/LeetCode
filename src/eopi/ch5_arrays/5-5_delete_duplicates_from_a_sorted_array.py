@@ -3,6 +3,15 @@
     Seek an O(n) / O(1) solution
 """
 
+"""
+Idea:
+    Two pointer technique. First pointer tracks index of unique elements. Second pointer finds next unique index.
+    Following full array scan, slice the array to just those unique elements found and repositioned.
+
+Time: O(n)
+Space: O(1)
+"""
+
 from typing import List
 
 def delete_duplicates(A: List[int]) -> List[int]:

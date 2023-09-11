@@ -1,4 +1,18 @@
-""" Write a program that returns the max profit if you bought and sold a stock once given the opening price for N days"""
+""" Buy and Sell a Stock Once 
+Write a program that returns the max profit if you bought and sold a stock once given the opening price for N days
+
+"""
+
+"""
+Idea:
+    Two pointer technique. Move left and right pointers from left to right, tracking the max difference between them.
+    If right pointer value is less than left pointer value, move left pointer to right pointer, and increment right pointer.
+    Else iterate right pointer.
+
+Time: O(n)
+Space: O(1)
+
+"""
 
 from typing import List
 

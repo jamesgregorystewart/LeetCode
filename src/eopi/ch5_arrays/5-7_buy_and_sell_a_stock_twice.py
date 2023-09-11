@@ -2,26 +2,35 @@
 
 """
 Tricks:
-    - encode information into memory arrays
+    - encode information into memory array.
+    - First pass is left to right, calculating max profit possible with one buy/sell, encoded into an array by day; 
+        Track minimum price seen, max_profit_first_day, and saving max_profit_first_day into prices[i].
+    - Second pass is right to left, calculating max profit possible with a second buy/sell by tracking
+        largest price seen, and saving 
+            max_total_profit = max(max_total_profit, (largest_price_seen - prices[i]) + max_profit_first_day[i])
 """
 
 from typing import List
 
-def get_max_profit(prices: List[int]) -> int:
-    max_total_profit = 0
-    max_profit_on_day = [0] * len(prices)
-    min_price_seen_so_far, max_price_seen_so_far = float('inf'), 0
-
-    # moving forward
+def get_max_profit_buy_sell_twice(prices: List[int]) -> int:
+    # First pass is forward to calculate max first day buy/sell profit
+    min_price_seen = float('inf')
+    max_profit_first_day = 0
+    max_first_trade_profit_by_day = [0] * len(prices)
     for i, price in enumerate(prices):
-        min_price_seen_so_far = min(min_price_seen_so_far, price)
-        max_total_profit = max(max_total_profit, price - min_price_seen_so_far)
-        max_profit_on_day[i] = max_total_profit
+        max_profit_first_day = max(max_profit_first_day, price - min_price_seen)
+        min_price_seen = min(min_price_seen, price)
+        max_first_trade_profit_by_day[i] = max_profit_first_day
 
-    for i, price in reversed(list(enumerate(prices[:1], 1))):
-        max_price_seen_so_far = max(max_price_seen_so_far, price)
-        max_total_profit = max(max_total_profit, max_price_seen_so_far - price + max_profit_on_day[i])
+    # Second pass is backwards, calculating max total profit, referencing first day's profits
+    max_total_profit, largest_price_seen = 0, prices[len(prices)-1]
+    for i, price in reversed(list(enumerate(prices))):
+        max_total_profit = max(max_total_profit, (largest_price_seen - price) + max_first_trade_profit_by_day[i])
+        largest_price_seen = max(largest_price_seen, price)
 
     return max_total_profit
 
-# print(get_max_profit(
+
+print(get_max_profit_buy_sell_twice([12,11,13,9,12,8,14,13,15]))
+print(get_max_profit_buy_sell_twice([0,1]))
+

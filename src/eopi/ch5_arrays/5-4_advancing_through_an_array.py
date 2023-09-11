@@ -2,9 +2,10 @@
 write a program which will determine whether it is possible to reach the end. """
 
 """
-Time: O
+Idea: Take max number of steps forward from each index, maintain last location and jump count in a stack
+Time: O(n^2)
+Space: O(n)
 """
-
 
 from typing import List
 
@@ -31,6 +32,16 @@ def advance_array(x: List[int]) -> bool:
 print(advance_array([3,3,1,0,2,0,1]))
 print(advance_array([3,2,0,0,2,0,1]))
 print(advance_array([0,1]))
+
+"""
+Idea:
+    Iterate through the array forward once, calculating the furthest you can reach from each index, breaking
+    if your position in the array exceeds the max calculated distance you can reach, and returning whether
+    the max furthest reach is greater than or equal to the final position in the index.
+
+Time: O(n)
+Space: O(1)
+"""
 
 def can_reach_end(x: List[int]) -> bool:
     furthest_reach_so_far, last_index = 0, len(x) - 1
