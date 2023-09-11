@@ -36,6 +36,9 @@ Idea:
     Localized approach. iterate through array, sorting each two adjacent elements in ascending, then descending order
     Alternating on each iteration (i % 2)
 
+Trick:
+    Noticing that you can locally rearrange each pair of elements in asc/desc order.
+
 Time: O(n)
 Space: O(1)
 """
