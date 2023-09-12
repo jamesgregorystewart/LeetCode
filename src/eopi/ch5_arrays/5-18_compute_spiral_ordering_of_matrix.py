@@ -9,6 +9,10 @@ Given an nxn matrix, return it's spiral ordering as an array
 
 Time: O(n^2)
 Space: O(n^2) For resultant array
+
+Tricks:
+    - Knowing how to apply a vector to an array...
+            array = [x + y for x, y in zip(array, vector)]
     
 """
 
