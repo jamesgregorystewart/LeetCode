@@ -11,6 +11,9 @@ Idea:
     2) swap A[i] with smallest element greater tthan A[i] in range [i, len(A)]
     3) sort subarray A[i+1:]
 
+Time: O(nlogn)
+Space: O(1)
+
 """
 
 from typing import List
