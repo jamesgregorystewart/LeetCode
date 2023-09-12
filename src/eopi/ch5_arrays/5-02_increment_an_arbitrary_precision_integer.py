@@ -2,6 +2,13 @@
 Given an integer encoded as an array, return an array encoding an integer one greater than the input.
 """
 
+"""
+Time: O(n)
+Space: O(1)
+"""
+
+
+
 from typing import List
 
 def increment_integer(x: List[int]) -> List[int]:

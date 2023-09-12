@@ -1,5 +1,13 @@
 """Given two arrays, each encoding an integer, return an array representing their product."""
 
+"""
+Idea:
+    Mimic grade-school multiplication between the two arrays;
+
+Time: O(xy)
+Space: O(ab); a = log(x, 10); b = log(y, 10)    log(x)log(y)
+"""
+
 from typing import List
 
 def multiply_integers(x: List[int], y: List[int]) -> List[int]:
@@ -17,8 +25,10 @@ def multiply_integers(x: List[int], y: List[int]) -> List[int]:
     if carry != 0:
         res[res_i] = carry
     if res[len(res)-1] == 0:
+        # remove leading zero
         del res[len(res)-1]
 
+    # return array back in normal order
     return res[::-1]
 
 print(multiply_integers([1,2,1], [1,3,7]))
