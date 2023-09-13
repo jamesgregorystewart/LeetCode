@@ -47,3 +47,8 @@ print(type(interconvert_strings_and_integers("123")))
 print(type(interconvert_strings_and_integers(123)))
 print(interconvert_strings_and_integers("-123"))
 print(interconvert_strings_and_integers(-123))
+
+
+# Super impressive one-liner for string to int
+def string_to_int(s: str) -> int:
+    return (-1 if s[0] == '-' else 1) * functools.reduce(lambda running_sum, c: running_sum * 10 + string.digits.index(c), s[s[0] in '-+':], 0)
