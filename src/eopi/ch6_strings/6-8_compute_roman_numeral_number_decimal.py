@@ -57,3 +57,18 @@ print(convert_roman_to_decimal("LVIIII"))
 print(convert_roman_to_decimal("LIX"))
 print(convert_roman_to_decimal("XXXXXIIIIIIIII"))
 print(convert_roman_to_decimal("IXC"))
+
+
+"""
+This is how you do it if you are an expert in python
+"""
+
+import functools
+
+def convert_roman_to_decimal_pythonic(roman: str) -> int:
+    T = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+    return functools.reduce(
+            lambda val, i: val + (-T[roman[i]] if T[roman[i]] < T[roman[i+1]] else T[roman[i]]), reversed(range(len(roman)-1)), T[roman[-1]])
+
+print(convert_roman_to_decimal_pythonic("LVIIII"))
