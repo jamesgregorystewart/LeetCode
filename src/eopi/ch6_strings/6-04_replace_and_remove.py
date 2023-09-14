@@ -12,3 +12,4 @@ Idea:
 """
 
 def replace_and_remove(chars: str, k: int) -> str:
+
