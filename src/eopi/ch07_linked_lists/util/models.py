@@ -37,3 +37,34 @@ class LinkedList:
             node = node.next
         print()
 
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def append(self, value) -> None:
+        new_node = ListNode(value)
+        if not self.head:
+            self.head = self.tail = new_node
+        else:
+            new_node.prev = self.tail
+            self.tail.next = new_node
+            self.tail = new_nodee
+
+    def append_values(self, values) -> None:
+         for value in values:
+            new_node = ListNode(value)
+            if not self.head:
+                self.head = self.tail = new_node
+            else:
+                new_node.prev = self.tail
+                self.tail.next = new_node
+                self.tail = new_node
+
+    def print_list(self):
+        node = self.head
+        while node:
+            print(" %s <->" % node.data)
+            node = node.next
+        print("None")
+
