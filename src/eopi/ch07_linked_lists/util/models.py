@@ -1,8 +1,8 @@
 class ListNode:
-    def __init__(self, data=0, next=None):
+    def __init__(self, data=0, next=None, prev=None):
         self.data = data
         self.next = next
-
+        self.prev = prev
 
 class LinkedList:
     def __init__(self):
@@ -36,3 +36,4 @@ class LinkedList:
             print("%s" % node.data, end = " -> ")
             node = node.next
         print()
+

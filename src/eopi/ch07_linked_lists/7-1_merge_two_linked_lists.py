@@ -7,7 +7,7 @@ Space: O(1)
 
 from util.models import *
 
-def merge_two_linked_lists(L1: ListNode, L2: ListNode) -> ListNode:
+def merge_two_singly_linked_lists(L1: ListNode, L2: ListNode) -> ListNode:
     dummy_head = tail = ListNode()
     while L1 and L2:
         if L1.data <= L2.data:
@@ -15,7 +15,6 @@ def merge_two_linked_lists(L1: ListNode, L2: ListNode) -> ListNode:
         else:
             tail.next, L2 = L2, L2.next
         tail = tail.next
-        print(tail.data)
     # appends the remaining L1 or L2 
     tail.next = L1 or L2
     return dummy_head.next
@@ -32,4 +31,4 @@ l1.append(5)
 # l0.print_list()
 # l1.print_list()
 
-print(merge_two_linked_lists(l0.head, l1.head).data)
+print(merge_two_singly_linked_lists(l0.head, l1.head).data)
