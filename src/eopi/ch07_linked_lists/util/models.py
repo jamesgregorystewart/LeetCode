@@ -49,7 +49,7 @@ class DoublyLinkedList:
         else:
             new_node.prev = self.tail
             self.tail.next = new_node
-            self.tail = new_nodee
+            self.tail = new_node
 
     def append_values(self, values) -> None:
          for value in values:
@@ -64,7 +64,7 @@ class DoublyLinkedList:
     def print_list(self):
         node = self.head
         while node:
-            print(" %s <->" % node.data)
+            print("%s" % node.data, end = " <-> ")
             node = node.next
         print("None")
 
