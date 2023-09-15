@@ -19,5 +19,7 @@ def find_first_occurrence(s: str, t: str) -> int:
         if s == t[pointer - (len(s)-1):pointer+1]:
             return pointer-(len(s)-1)
         pointer += 1
-
+ 
 print(find_first_occurrence("aabc", "cdaabfaabccdafaabc"))
+
+
