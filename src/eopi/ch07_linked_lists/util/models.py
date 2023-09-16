@@ -20,12 +20,12 @@ class LinkedList:
 
     def append_values(self, values) -> None:
         tail_node = self.head
-        while tail_node.next:
+        while tail_node and tail_node.next:
             tail_node = tail_node.next
 
         for value in values:
             if not tail_node:
-                tail_node = ListNode(value)
+                self.head = tail_node = ListNode(value)
             else:
                 tail_node.next = ListNode(value)
                 tail_node = tail_node.next
