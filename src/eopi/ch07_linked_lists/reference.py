@@ -2,6 +2,13 @@
 Tips, tricks, paradigms, and useful functions and patterns for reference in solving Linked List Problems
 """
 
+"""
+Notes:
+    - Maintain a dummy_head which is a new node which points to the first node of a provided list
+    - Pointers are key; When doing reversals you may need a few pointers, one to maintain you original starting point,
+        another to iterate, and a temp to maintain reference to a node that could otherwise be dereferenced. E.g. 7.2
+"""
+
 # Node model
 class ListNode:
     def __init__(self, data=0, next=None):
