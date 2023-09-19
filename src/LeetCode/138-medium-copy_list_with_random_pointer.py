@@ -18,6 +18,16 @@
 # -104 <= Node.val <= 104
 # Node.random is null or is pointing to some node in the linked list.
 
+"""
+Idea:
+    - Interleave new nodes with old nodes for unweaving later because on second pass we will set value of 
+        new_node.random to old_node.random.next
+    - Then unweave
+
+Time: O(n)
+Space: O(1)
+"""
+
 
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
