@@ -25,6 +25,11 @@ class ListNode:
         self.val = val
         self.next = next
 
+"""
+Time: O(n)
+Space: O(1)
+"""
+
 from typing import Optional
 
 class Solution:
