@@ -35,6 +35,11 @@
 """
 Time: O(log(n))
 Space: O(1)
+
+Tricks:
+    - When search a sorted, but rotated array, find the min first. 
+        This requires check mid-adjacent values for rotation point
+    - To prevent integer overflow (not possible in python) - use mid = left + (right - left) // 2
 """
 
 from typing import List
