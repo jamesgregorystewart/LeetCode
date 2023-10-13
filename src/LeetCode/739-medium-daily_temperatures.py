@@ -23,6 +23,12 @@
 # 1 <= temperatures.length <= 105
 # 30 <= temperatures[i] <= 100
 
+"""
+Tricks:
+    - Use of monotonic stack which stores the indices of the temperatures, since that is what we actually care about,
+    and the indices serve as lookup to temperature from the input
+"""
+
 from typing import List
 
 class Solution:
