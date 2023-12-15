@@ -30,17 +30,33 @@
 from typing import List
 
 
+# class Solution:
+#     def coinChange(self, coins: List[int], amount: int) -> int:
+#         dp = [0] + [float('inf')] * amount
+#         for i in range(1, amount+1):
+#             for coin in coins:
+#                 if i - coin < 0:
+#                     break
+#                 dp[i] = min(dp[i], dp[i-coin] + 1)
+#
+#         return dp[-1]
+#
+#
+# solution = Solution()
+# print(solution.coinChange(coins=[1, 2, 5], amount=11))
+
+
+
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [0] + [float('inf')] * amount
         for i in range(1, amount+1):
             for coin in coins:
-                if i - coin < 0:
-                    break
-                dp[i] = min(dp[i], dp[i-coin] + 1)
-
-        return dp[-1]
-
+                if coin <= i:
+                    dp[i] = min(dp[i], dp[i-coin] + 1)
+        return dp[amount] if dp[amount] != float('inf') else -1
 
 solution = Solution()
-print(solution.coinChange(coins=[1, 2, 5], amount=11))
+print(solution.coinChange(coins = [1,2,5], amount = 11))
+print(solution.coinChange(coins = [2], amount = 3))
+print(solution.coinChange(coins = [1,2,5], amount = 11))
