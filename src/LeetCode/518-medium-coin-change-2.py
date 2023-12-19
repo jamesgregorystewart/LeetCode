@@ -72,14 +72,31 @@ from typing import List
 As Errichto said, it's often possible to remove a dimension from the space
 by iterating over the same cells more than once
 """
+# class Solution:
+#     def change(self, amount: int, coins: List[int]) -> int:
+#         dp: List[int] = [1] + [0] * amount
+#         for i in range(len(coins)-1, -1, -1):
+#             for j in range(coins[i], amount+1):
+#                 dp[j] += dp[j-coins[i]]
+#         return dp[amount]
+
+
+
+
+
+
+
+
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        dp: List[int] = [1] + [0] * amount
-        for i in range(len(coins)-1, -1, -1):
-            for j in range(coins[i], amount+1):
-                dp[j] += dp[j-coins[i]]
+        dp = [1] + [0] * amount
+        for coin in coins:
+            for j in range(coin, amount+1):
+                dp[j] += dp[j-coin]
         return dp[amount]
 
 
 solution = Solution()
 print(solution.change(5, coins=[5, 1, 2]))
+print(solution.change(amount = 3, coins = [2]))
+print(solution.change(amount = 10, coins = [10]))
