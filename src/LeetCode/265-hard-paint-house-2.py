@@ -35,7 +35,7 @@
 
 from typing import List
 
-
+#O(n*k)
 class Solution:
     def minCostII(self, costs: List[List[int]]) -> int:
         n, k = len(costs), len(costs[0])
@@ -50,6 +50,8 @@ class Solution:
         for i, cost in enumerate(costs[-1]):
             if cost <= prev1_min[1]:
                 prev1_min, prev2_min = (i, cost), prev1_min
+            elif cost < prev2_min[1]:
+                prev2_min = (i, cost)
 
         for house in range(n-2, -1, -1):
             next_prev1_min = (float('inf'), float('inf'))
@@ -62,12 +64,15 @@ class Solution:
                 if dp[house][color] <= next_prev1_min[1]:
                     next_prev2_min = next_prev1_min
                     next_prev1_min = (color, dp[house][color])
+                elif dp[house][color] < next_prev2_min[1]:
+                    next_prev2_min = (color, dp[house][color])
                 if house == 0:
                     min_total_cost = min(min_total_cost, dp[house][color])
 
             prev1_min, prev2_min = next_prev1_min, next_prev2_min
         return min_total_cost
 
+# O(n*k*k)
 # class Solution:
 #     def minCostII(self, costs: List[List[int]]) -> int:
 #         n, k = len(costs), len(costs[0])
@@ -94,3 +99,4 @@ solution = Solution()
 # print(solution.minCostII(costs = [[1,3]]))
 print(solution.minCostII(costs = [[8,16,12,18,9],[19,18,8,2,8],[8,5,5,13,4],[15,9,3,19,2],[8,7,1,8,17],[8,2,8,15,5],[8,17,1,15,3],[8,8,5,5,16],[2,2,18,2,9]]))
 print(solution.minCostII([[10,15,12,14,18,5],[5,12,18,13,15,8],[4,7,4,2,10,18],[20,9,9,19,20,5],[10,15,10,15,16,20],[9,6,11,10,12,11],[7,10,6,12,20,8],[3,4,4,18,10,2]]))
+print(solution.minCostII([[4,16],[15,5],[18,17],[10,12],[14,10],[3,10],[2,11],[18,14],[9,1],[14,13]]))
