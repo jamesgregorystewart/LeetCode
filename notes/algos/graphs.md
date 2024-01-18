@@ -164,6 +164,101 @@ class UnionFind:
 ```
 
 Putting our two optimization to QuickUnion Disjoint Sets together we can achieve a Time Complexity Table of
-| | Union-find Constructor | Find | Union | Connected |
-| ----- | ----- | ------ | ----- | ------ |
-| | O(N) | O(α(N)) | O(α(N)) | O(α(N)) |
+| Union-find Constructor | Find | Union | Connected |
+| ----- | ------ | ----- | ------ |
+| O(N) | O(α(N)) | O(α(N)) | O(α(N)) |
+
+O(α(N)) refers to the Inverse Ackermann function. In practice assume it's a constant, or O(1).
+
+## Depth-First Search
+
+Now we will consider, given a graph, how will we find all of its vertices and how can we find all paths between two vertices.
+
+In graph theory, DFS is mainly used to:
+
+1. Traverse all vertices in a "graph"
+2. Traverse all paths between any two vertices in a "graph"
+
+Data structures used:
+
+- _Stack_ to track untraversed paths, or vertices; Note that if you are traversing all paths between two points, you will be storing the full path in the stack.
+- _Set_ to track where you have been, what has been visited.
+
+### Traversing all vertices in graph
+
+- Stack will track all vertices connected by edge to current vertex
+- Set will track vertices that have been visited
+
+When pulling off the stack, check if the vertex has been visited, if so, continue popping off stack until a vertex you have not visited appears
+
+### Traversing all paths between two points
+
+- Stack will track all paths available from current vertex
+- Set will track visited vertices as part of a current path; set of visited will remove vertices as you backtrack to attempt other paths; unmark a vertex as visited if there are no valid paths from that vertex
+
+### Implementation
+
+1. First step is typically to create an adjacency map to allow for quick lookups and prevent references to input array. This will take the form of a `graph = collections.defaultdict(list)` so that you may quickly append edges
+
+```python
+for a, b in edges:
+    graph[a].append(b)
+    graph[b].append(a)
+```
+
+2. A "seen" _Set_ will track where you have been: `seen = [False] * n`
+
+### Recursive Example
+
+```python
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        graph = collections.defaultdict(list)
+        for a, b in edges:
+            graph[a].append(b)
+            graph[b].append(a)
+
+        seen = [False] * n
+
+        def dfs(curr_node):
+            if curr_node == destination:
+                return True
+            if not seen[curr_node]:
+                seen[curr_node] = True
+                for next_node in graph[curr_node]:
+                    if dfs(next_node):
+                        return True
+            return False
+
+        return dfs(source)
+```
+
+### Iterative Example
+
+```python
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        # Store all edges according to nodes in 'graph'.
+        graph = collections.defaultdict(list)
+        for a, b in edges:
+            graph[a].append(b)
+            graph[b].append(a)
+
+        # Start from source node, add it to stack.
+        seen = [False] * n
+        seen[source] = True
+        stack = [source]
+
+        while stack:
+            curr_node = stack.pop()
+            # Add all unvisited neighbors of the current node to stack
+            # and mark them as visited.
+            for next_node in graph[curr_node]:
+                if next_node == destination:
+                    return True
+                if not seen[next_node]:
+                    seen[next_node] = True
+                    stack.append(next_node)
+
+        return seen[destination]
+```
