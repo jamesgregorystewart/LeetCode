@@ -94,7 +94,7 @@ class Solution(object):
 
 solution = Solution()
 # print(solution.findItinerary(tickets = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]))
-# print(solution.findItinerary(tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]))
+print(solution.findItinerary(tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]))
 # print(solution.findItinerary(tickets = [["JFK","ATL"],["ATL","JFK"]]))
 # print(solution.findItinerary(tickets = [["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]))
 # print(solution.findItinerary(tickets = [["EZE","AXA"],["TIA","ANU"],["ANU","JFK"],["JFK","ANU"],["ANU","EZE"],["TIA","ANU"],["AXA","TIA"],["TIA","JFK"],["ANU","TIA"],["JFK","TIA"]]))

@@ -262,3 +262,57 @@ class Solution:
 
         return seen[destination]
 ```
+
+### Specialized Algorithms
+
+#### Hierholzer's Algorithm to find Eulerian Path
+
+Problem: [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/editorial/)
+Eulerian Path is a trail in a finite graph that visitts every edge exactly once. Allowing for revisiting vertices. Basic idea is a stepwise construction of the Eulerian cycle byu connecting disjuunctive circles. The two steps involved are:
+
+- It starts with a random node and then follows an arbitrary unvisited edge to a neighbor. This step is repeated until one returns to the starting node. This yields the first circle in the graph.
+- If this circle covers all nodes it is an Eulerian cycle and the algorithm is finished. Otherwise, one chooses another node among the cycles' nodes with unvisited edges and constructs another circle, called subtour.
+
+The general path followed can be managed with sorting graph contents, or by choosing a starting point.
+
+To summarize, the main idea to find the Eulerian path consists of two steps:
+
+Step 1). Starting from any vertex, we keep following the unused edges until we get stuck at certain vertex where we have no more unvisited outgoing edges.
+
+Step 2). We then backtrack to the nearest neighbor vertex in the current path that has unused edges and we repeat the process until all the edges have been used.
+
+Sample simple backtracking DFS with precise starting point and lexicographically sorted graph.
+
+```python
+class Solution(object):
+    def findItinerary(self, tickets):
+        """
+        :type tickets: List[List[str]]
+        :rtype: List[str]
+        """
+        from collections import defaultdict
+        self.flightMap = defaultdict(list)
+
+        for ticket in tickets:
+            origin, dest = ticket[0], ticket[1]
+            self.flightMap[origin].append(dest)
+
+        # sort the itinerary based on the lexical order
+        for origin, itinerary in self.flightMap.items():
+        # Note that we could have multiple identical flights, i.e. same origin and destination.
+            itinerary.sort(reverse=True)
+
+        self.result = []
+        self.DFS('JFK')
+
+        # reconstruct the route backwards
+        return self.result[::-1]
+
+    def DFS(self, origin):
+        destList = self.flightMap[origin]
+        while destList:
+            #while we visit the edge, we trim it off from graph.
+            nextDest = destList.pop()
+            self.DFS(nextDest)
+        self.result.append(origin)
+```
