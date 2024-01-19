@@ -316,3 +316,36 @@ class Solution(object):
             self.DFS(nextDest)
         self.result.append(origin)
 ```
+
+#### Using Memoization, DFS, Backtracking all together
+
+Problem: [All Paths from Source Lead to Destination](https://leetcode.com/problems/all-paths-from-source-lead-to-destination/description/)
+
+```python
+class Solution:
+    def leadsToDestination(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        # Step 1 create graph
+        self.graph = collections.defaultdict(list)
+        for start, end in edges:
+            self.graph[start].append(end)
+
+        """
+        Cache results on whether we can reach end or not from a point
+        to short-circuit where possible. Also allows us to share a single
+        reference to the graph and not do any deep copies
+        """
+        @lru_cache(None)
+        def dfs(start) -> bool:
+            destinations = self.graph[start]
+            if destinations and start == destination:
+                return False
+            if not destinations:
+                return start == destination
+            leads_to_dest = True
+            while destinations:
+                next_end = destinations.pop()
+                leads_to_dest &= dfs(next_end)
+            return leads_to_dest
+
+        return dfs(source)
+```

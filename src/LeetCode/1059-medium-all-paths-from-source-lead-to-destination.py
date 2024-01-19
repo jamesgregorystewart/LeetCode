@@ -39,6 +39,7 @@
 
 from typing import List, Tuple, Set, Dict
 import collections
+from functools import lru_cache
 
 
 class Solution:
@@ -47,11 +48,9 @@ class Solution:
         self.graph = collections.defaultdict(list)
         for start, end in edges:
             self.graph[start].append(end)
-        can_get_to_dest = collections.defaultdict(bool)
 
+        @lru_cache(None)
         def dfs(start) -> bool:
-            if can_get_to_dest[start]:
-                return True
             destinations = self.graph[start]
             if destinations and start == destination:
                 return False
@@ -61,10 +60,6 @@ class Solution:
             while destinations:
                 next_end = destinations.pop()
                 leads_to_dest &= dfs(next_end)
-                if leads_to_dest:
-                    can_get_to_dest[next_end] = True
-            if leads_to_dest:
-                can_get_to_dest[start] = True
             return leads_to_dest
 
         return dfs(source)
