@@ -35,39 +35,42 @@
 
 from typing import List
 
-import collections
-
 
 class Solution:
-    def validPath(
-            self,
-            n: int,
-            edges: List[List[int]],
-            source: int, destination: int) -> bool:
-        if source == destination:
-            return True
-        # Step 1 build the adjacency graph
-        graph = collections.defaultdict(list)
-        for edge in edges:
-            graph[edge[0]].append(edge[1])
-            graph[edge[1]].append(edge[0])
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        uf = UnionFind(n)
+        for a, b in edges:
+            uf.union(a, b)
 
-        # Step 2 initialize the seen set and the search stack
-        seen = [False] * n
-        seen[source] = True
-        stack = [source]
+        return uf.connected(source, destination)
 
-        # Step 3 find that path
-        while stack:
-            cur_vertex = stack.pop()
-            for vertex in graph[cur_vertex]:
-                if vertex == destination:
-                    return True
-                if not seen[vertex]:
-                    stack.append(vertex)
-            seen[cur_vertex] = True
 
-        return False
+class UnionFind:
+    def __init__(self, n: int):
+        self.n = n
+        self.root = [i for i in range(n)]
+        self.rank = [1] * n
+
+    def find(self, x: int) -> int:
+        if x == self.root[x]:
+            return x
+        self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def union(self, x: int, y: int) -> None:
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            if self.rank[rootX] > self.rank[rootY]:
+                self.root[rootY] = self.root[rootX]
+            elif self.rank[rootY] > self.rank[rootX]:
+                self.root[rootX] = self.root[rootY]
+            else:
+                self.root[rootY] = self.root[rootX]
+                self.rank[rootX] += 1
+
+    def connected(self, x: int, y: int) -> bool:
+        return self.find(x) == self.find(y)
 
 
 solution = Solution()

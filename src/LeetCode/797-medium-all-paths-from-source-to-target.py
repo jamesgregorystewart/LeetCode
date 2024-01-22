@@ -32,6 +32,7 @@ from typing import List
 import collections
 
 
+# DFS
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
 
@@ -61,6 +62,28 @@ class Solution:
                 if not seen[vertex]:
                     stack.append(cur_path + [vertex])
         return paths
+
+
+# BFS
+class Solution:
+    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
+        import collections
+        queue = collections.deque([[0]])
+        target = len(graph) - 1
+
+        # Build the adjacency list
+        adj_list = collections.defaultdict(list)
+        for i, vertices in enumerate(graph):
+            adj_list[i].extend(vertices)
+
+        results: List[List[int]] = []
+        while queue:
+            path = queue.popleft()
+            if path[-1] == target:
+                results.append(path.copy())
+            for neighbor in adj_list[path[-1]]:
+                queue.append(path + [neighbor])
+        return results
 
 
 solution = Solution()

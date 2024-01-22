@@ -349,3 +349,217 @@ class Solution:
 
         return dfs(source)
 ```
+
+## Breadth-First Search
+
+Most advantageous case for "breadth-first search" is to efficiently find the shortest path between two vertices in a "graph" where all edges have equal and positive weight.
+
+### Tips
+
+You can process elements by level by processing the length of the queue at a time. I.e. all nodes 1 level from origin, all nodes 2 levels from origin, etc. This may be useful when trying to find the minimum path from a point, can be either a tree, graph or matrix. Another thing to note here is the use of the is_valid_move() function to check whether the next move is valid or not.
+
+Problem: [Shortest Path in Binary Matrix](https://leetcode.com/explore/learn/card/graph/620/breadth-first-search-in-graph/3896/)
+
+```python
+class Solution:
+    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+        if not grid or grid[0][0] != 0 or grid[len(grid)-1][len(grid[0])-1] != 0:
+            return -1
+
+        queue = collections.deque()
+        queue.append((0,0)) # x, y, path_dist
+        moves = [[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1],[-1,-1]]
+        seen = [[False] * len(grid[0]) for _ in range(len(grid))]
+        seen[0][0] = True
+
+        # Let's make sure we stay in bounds
+        def is_valid_move(row, col) -> bool:
+            return 0 <= row < len(grid) and 0 <= col < len(grid[0]) and \
+                grid[row][col] == 0
+
+        path_length = 1
+        while queue:
+            band = len(queue)
+            for _ in range(band):
+                row, col = queue.popleft()
+                if row == len(grid)-1 and col == len(grid[0]) - 1:
+                    return path_length
+                for move in moves:
+                    n_row, n_col = [a + b for a, b in zip([row, col], move)]
+                    if is_valid_move(n_row, n_col) and not seen[n_row][n_col]:
+                        seen[n_row][n_col] = True
+                        queue.append((n_row, n_col))
+            path_length += 1
+        return -1
+```
+
+#### Get Candidates/Neighbors with position validation
+
+When doing BFS in a matrix, it is often useful to validate the next set of positions are valid. A trick to do that is to create a function which does this validation simply, and yields the candidates for simple use in a loop.
+
+```python
+def get_neighbors(row, col):
+    directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+    for row_diff, col_diff in directions:
+        n_row, n_col = row + row_diff, col + col_diff
+        if not (0 <= n_row < n and 0 <= n_col < m):
+            continue
+        if grid[n_row][n_col] != 1:
+            continue
+        yield (n_row, n_col)
+
+minutes = -1
+while queue:
+    minutes += 1
+    band = len(queue)
+    for _ in range(band):
+        row, col = queue.popleft()
+        for orange in get_neighbors(row, col):
+            grid[orange[0]][orange[1]] = 2
+            fresh -= 1
+            queue.append(orange)
+```
+
+## Minimum Spanning Tree
+
+Two algorithms take charge here when solving undirected weighted graph problems, typically minimizing or maximizing the path, or weight of the tree or graph.
+
+### Kruskal's Algorithm
+
+The basic idea here is that we will create all possible edges, sort them by weight, then add them to a UnionFind DS if they are unconncected to iteratively add all the edges greedily in order of smallest weight until we have a fully connected tree or graph.
+
+Problem: [Minimum Spanning Tree](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3858/)
+
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        if not points or len(points) == 0:
+            return 0
+        size = len(points)
+        pq = []
+        uf = UnionFind(size)
+
+        for i in range(size):
+            x1, y1 = points[i]
+            for j in range(i + 1, size):
+                x2, y2 = points[j]
+                # Calculate the distance between two coordinates.
+                cost = abs(x1 - x2) + abs(y1 - y2)
+                edge = Edge(i, j, cost)
+                pq.append(edge)
+
+        # Convert pq into a heap.
+        heapq.heapify(pq)
+
+        result = 0
+        count = size - 1
+        while pq and count > 0:
+            edge = heapq.heappop(pq)
+            if not uf.connected(edge.point1, edge.point2):
+                uf.union(edge.point1, edge.point2)
+                result += edge.cost
+                count -= 1
+        return result
+
+class Edge:
+    def __init__(self, point1, point2, cost):
+        self.point1 = point1
+        self.point2 = point2
+        self.cost = cost
+
+    def __lt__(self, other):
+        return self.cost < other.cost
+
+class UnionFind:
+    def __init__(self, size):
+        self.root = [i for i in range(size)]
+        self.rank = [1] * size
+
+    def find(self, x):
+        if x == self.root[x]:
+            return x
+        self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def union(self, x, y):
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            if self.rank[rootX] > self.rank[rootY]:
+                self.root[rootY] = rootX
+            elif self.rank[rootX] < self.rank[rootY]:
+                self.root[rootX] = rootY
+            else:
+                self.root[rootY] = rootX
+                self.rank[rootX] += 1
+
+    def connected(self, x, y):
+        return self.find(x) == self.find(y)
+
+if __name__ == "__main__":
+    points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+    solution = Solution()
+    print(f"points = {points}")
+    print(f"Minimum Cost to Connect Points = {solution.minCostConnectPoints(points)}")
+```
+
+### Prim's Algorithm
+
+The basic idea here is that we are going to add one vertex at a time to our MST by first creating all edges from the first point, adding them to a minheap, and then iteratively pop off the edges, checking the second point on whether it has been seen. If it hasn't we'll add the vertex in that min-cost edge to our graph, adjusting the cost and count, and then add all possible edges from that vertex to the heap.
+
+Problem: [Minimum Spanning Tree](https://leetcode.com/explore/learn/card/graph/621/algorithms-to-construct-minimum-spanning-tree/3858/)
+
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        if not points or len(points) == 0:
+            return 0
+        size = len(points)
+        pq = []
+        visited = [False] * size
+        result = 0
+        count = size - 1
+        # Add all edges from points[0] vertexs
+        x1, y1 = points[0]
+        for j in range(1, size):
+            # Calculate the distance between two coordinates.
+            x2, y2 = points[j]
+            cost = abs(x1 - x2) + abs(y1 - y2)
+            edge = Edge(0, j, cost)
+            pq.append(edge)
+
+        # Convert pq to a heap.
+        heapq.heapify(pq)
+
+        visited[0] = True
+        while pq and count > 0:
+            edge = heapq.heappop(pq)
+            point1 = edge.point1
+            point2 = edge.point2
+            cost = edge.cost
+            if not visited[point2]:
+                result += cost
+                visited[point2] = True
+                for j in range(size):
+                    if not visited[j]:
+                        distance = abs(points[point2][0] - points[j][0]) + \
+                                   abs(points[point2][1] - points[j][1])
+                        heapq.heappush(pq, Edge(point2, j, distance))
+                count -= 1
+        return result
+
+class Edge:
+    def __init__(self, point1, point2, cost):
+        self.point1 = point1
+        self.point2 = point2
+        self.cost = cost
+
+    def __lt__(self, other):
+        return self.cost < other.cost
+
+if __name__ == "__main__":
+    points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+    solution = Solution()
+    print(f"points = {points}")
+    print(f"Minimum Cost to Connect Points = {solution.minCostConnectPoints(points)}")
+```
