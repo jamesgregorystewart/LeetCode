@@ -582,4 +582,85 @@ We take the starting point u as the center and gradually expand outward while up
 
 This involves setting the distances to all vertices from the target as infinity and iterating through, updating the distance to each vertex as the min. We will maintain a set of processed nodes to prevent looking back at vertices we have already processed and computed a minimum distance to for.
 
+In other terms, we will use a heap to prioritize those available paths to take from some location to which we navigated to with the weight used in ordering the shortest path. From the node we popped off the queue/heap we will find all adjacent nodes, if not visited we will add those next paths to the queue with the weight of what it cost to get to the source node *plus* the weight to get to that next node.
 
+Problem: [Network Delay Time](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3863/)
+
+```python
+class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        if not times or n < 2:
+            return -1
+
+        # Build adj matrix
+        graph: Dict[int, List[Tuple[int, int]]] = collections.defaultdict(list)
+        for src, to, weight in times:
+            graph[src].append((to, weight))
+        queue = [(0, k)]  # This is a min heap to sort paths by shortest
+        processed = set()
+        max_cost = 0
+
+        """
+        We are going to continue popping off the node with the shortest path, taking
+        what is the current delay get where we were previously and adding the weight
+        to the adjacent nodes and putting those back onto the queue. Once we have
+        visited all of the nodes, and the queue is empty, we will be able to return
+        what we have calculate to be the max delay along the longest path in the graph.
+        """
+
+        while queue:
+            weight, node = heapq.heappop(queue)
+            if node in processed:
+                continue
+            for adj_node, adj_weight in graph[node]:
+                if adj_node not in processed:
+                    heapq.heappush(queue, (weight + adj_weight, adj_node))
+            processed.add(node)
+            max_cost = max(max_cost, weight)
+
+        return max_cost if len(processed) == n else -1
+
+```
+
+### Bellman Ford Algorithm
+
+Allows negative-weight edges, but must not have any negative weight cycles. That is a cycle with a sum of weights that is negative. This would result in a negative infinity weight when cycling that path infinite times. Thus there is no shortest path when there is a negative cycle in a graph.
+
+#### Approaches
+1) The naive approach which is to use an optimized dynamic programming design which is required when there is a limit such as finding the path between two nodes using "at most k edges".
+2) The optimized approach wherein you traverse the adjacency graph mapping min distance to each node from the source regardless of number of edges used. Continue to do this until the shortest path to each node stops going down, at which point you can exit/return.
+
+##### DP approach
+
+Recurrence relation for DP approach is `dp[k][u] = min(dp[k][u], dp[k-1][v] + W(u,v))`. This recurrence relation explains that the shortest path to some vertex u using at most k edges is equal to the min between the currently mapped min distance to that vertex and the min distance to some other vertex v plus the distance from v to u. Easy.
+
+#### Detecting Negative Weight Cycles
+After relaxing each edge N-1 times, perform the Nth relaxation. If you continue to detect shorter edges in the graph, then there is a negative weight cycle and thus no shortest path.
+
+#### SPFA Algorithm 
+
+To address the limitations, we introduce an improved variation of the Bellman-Ford algorithm by using a queue. This improvement is known as “the Shortest Path Faster Algorithm” (SPFA algorithm).
+
+Instead of choosing among any untraversed edges, as one does by using the “Bellman-Ford” algorithm, the “SPFA” Algorithm uses a “queue” to maintain the next starting vertex of the edge to be traversed. Only when the shortest distance of a vertex is relaxed and that the vertex is not in the “queue”, we add the vertex to the queue. We iterate the process until the queue is empty. At this point, we have calculated the minimum distance from the given vertex to any vertices.
+
+#### Problems
+
+DP Bellman Ford
+[Cheapest Flights within K Stops](https://leetcode.com/explore/learn/card/graph/622/single-source-shortest-path-algorithm/3866/)
+```python
+class Solution:
+    def findCheapestPrice(
+        self, n: int, flights: List[List[int]], src: int, dst: int, k: int
+    ) -> int:
+        costs = [float("inf")] * n
+
+        costs[src] = 0
+        for _ in range(k + 1):
+            temp = costs.copy()
+            for start, end, price in flights:
+                # Below checks if we have yet been to where we are starting from
+                if costs[start] != float("inf"):
+                    temp[end] = min(temp[end], costs[start] + price)
+            costs = temp
+        return costs[dst] if costs[dst] != float("inf") else -1
+```
