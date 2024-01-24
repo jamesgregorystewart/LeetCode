@@ -563,3 +563,23 @@ if __name__ == "__main__":
     print(f"points = {points}")
     print(f"Minimum Cost to Connect Points = {solution.minCostConnectPoints(points)}")
 ```
+
+## Single Source Shortest Path Algorithm
+
+BFS is great at finding shortest path in an unweighted graph. When the graph is weighted, we must turn to the single-source shortest path algorithm.
+
+### Edge Relaxation
+
+This is the process by which we map distances between the source and its connected vertices by "relaxing", that is identifying shorter paths through other vertices to a target. E.g. A -> D may be `4`, but A -> C is `1` and C -> D is `1`, so we can relax A -> D from `4` to `3`.
+
+### Dijkstra's Algorithm
+
+“Dijkstra’s algorithm” solves the “single-source shortest path” problem in a weighted directed graph with non-negative weights.
+
+We take the starting point u as the center and gradually expand outward while updating the “shortest path” to reach other vertices.
+
+“Dijkstra's Algorithm” uses a “greedy approach”. Each step selects the “minimum weight” from the currently reached vertices to find the “shortest path” to other vertices.
+
+This involves setting the distances to all vertices from the target as infinity and iterating through, updating the distance to each vertex as the min. We will maintain a set of processed nodes to prevent looking back at vertices we have already processed and computed a minimum distance to for.
+
+
