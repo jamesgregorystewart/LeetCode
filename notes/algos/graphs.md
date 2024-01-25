@@ -278,9 +278,9 @@ class Solution:
 #### Hierholzer's Algorithm to find Eulerian Path
 
 Problem: [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/editorial/)
-Eulerian Path is a trail in a finite graph that visits every edge exactly once. Allowing for revisiting vertices. Basic idea is a stepwise construction of the Eulerian cycle by connecting disjunctive circles. The two steps involved are:
+Eulerian Path is a trail in a finite graph that visits every edge exactly once. A Eulerian circuit is a Eulerian path that starts and ends at the same vertex. Allowing for revisiting vertices. Basic idea is a stepwise construction of the Eulerian cycle by connecting disjunctive circles. The two steps involved are:
 
-- It starts with a random node and then follows an arbitrary unvisited edge to a neighbor. This step is repeated until one returns to the starting node. This yields the first circle in the graph.
+- It starts with an arbitrary node and then follows an arbitrary unvisited edge from the graph/adjacnecy list to a neighbor. This step is repeated by marking these edges as used, or removing them from the graph (i.e. popping them from the collection).
 - If this circle covers all nodes it is an Eulerian cycle and the algorithm is finished. Otherwise, one chooses another node among the cycles' nodes with unvisited edges and constructs another circle, called subtour.
 
 The general path followed can be managed with sorting graph contents, or by choosing a starting point.
@@ -576,7 +576,7 @@ if __name__ == "__main__":
 
 ## Single Source Shortest Path Algorithm
 
-BFS is great at finding shortest path in an unweighted graph. When the graph is weighted, we must turn to the single-source shortest path algorithm.
+BFS is great at finding shortest path in an unweighted graph. When the graph is weighted, we must turn to the single-source shortest path algorithm. TBC these will be great algorithms when solving weighted, directed shortest-path problems.
 
 ### Edge Relaxation
 
@@ -588,7 +588,7 @@ This is the process by which we map distances between the source and its connect
 
 We take the starting point u as the center and gradually expand outward while updating the “shortest path” to reach other vertices.
 
-“Dijkstra's Algorithm” uses a “greedy approach”. Each step selects the “minimum weight” from the currently reached vertices to find the “shortest path” to other vertices.
+“Dijkstra's Algorithm” uses a “greedy approach”. Each step selects the “minimum weight” from the currently reached vertices to find the “shortest path” to other vertices. It is because this algorithm is greedy that negative weights do not work. If negative weights were permissible then locally optimal choices may not lead to a globally optimal solution due to the creation of cycles. Negative weights may cause the algorithm to revisit and potentially update the distrances of previously visited vertices.
 
 This involves setting the distances to all vertices from the target as infinity and iterating through, updating the distance to each vertex as the min. We will maintain a set of processed nodes to prevent looking back at vertices we have already processed and computed a minimum distance to for.
 
