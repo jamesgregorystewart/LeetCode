@@ -5,6 +5,10 @@
 ## Table of Contents
 
 1. [Disjoint Sets](#disjoint-sets)
+2. [Depth-First Search](#depth-first-search)
+3. [Breadth-First Search](#breadth-first-search)
+4. [Minimum-Spanning Tree](#minimum-spanning-tree)
+5. [Single Source Shortest Path Algorithm](#single-source-shortest-path-algorithm)
 
 ## Disjoint Sets
 
