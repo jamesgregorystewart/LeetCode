@@ -4,14 +4,14 @@
 #
 # Return the minimum cost to make all points connected. All points are connected if there is exactly one simple path between any two points.
 #
-#  
+#
 #
 # Example 1:
 #
 #
 # Input: points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
 # Output: 20
-# Explanation: 
+# Explanation:
 #
 # We can connect the points as shown above to get the minimum cost of 20.
 # Notice that there is a unique path between every pair of points.
@@ -19,7 +19,7 @@
 #
 # Input: points = [[3,12],[-2,5],[-4,1]]
 # Output: 18
-#  
+#
 #
 # Constraints:
 #
@@ -101,17 +101,17 @@ class Solution:
         if not points:
             return 0
         edges = []
-        seen = [True] + [False] * (len(points)-1)
-        count = len(points)-1
+        seen = [True] + [False] * (len(points) - 1)
+        count = len(points) - 1
         result = 0
 
         for i in range(1, len(points)):
-            cost = abs(points[0][0]-points[i][0]) + \
-                abs(points[0][1]-points[i][1])
+            cost = abs(points[0][0] - points[i][0]) + abs(points[0][1] - points[i][1])
             edge = Edge(0, i, cost)
             edges.append(edge)
 
         import heapq
+
         heapq.heapify(edges)
         while edges and count > 0:
             edge = heapq.heappop(edges)
@@ -122,9 +122,8 @@ class Solution:
                 result += cost
                 count -= 1
                 for i in range(1, len(points)):
-                    distance = (
-                        abs(points[point2][0]-points[i][0]) +
-                        abs(points[point2][1]-points[i][1])
+                    distance = abs(points[point2][0] - points[i][0]) + abs(
+                        points[point2][1] - points[i][1]
                     )
                     edge = Edge(point2, i, distance)
                     heapq.heappush(edges, edge)
@@ -142,5 +141,5 @@ class Edge:
 
 
 solution = Solution()
-print(solution.minCostConnectPoints(points = [[0,0],[2,2],[3,10],[5,2],[7,0]]))
-print(solution.minCostConnectPoints(points = [[3,12],[-2,5],[-4,1]]))
+print(solution.minCostConnectPoints(points=[[0, 0], [2, 2], [3, 10], [5, 2], [7, 0]]))
+print(solution.minCostConnectPoints(points=[[3, 12], [-2, 5], [-4, 1]]))
