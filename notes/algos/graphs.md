@@ -9,6 +9,7 @@
 3. [Breadth-First Search](#breadth-first-search)
 4. [Minimum-Spanning Tree](#minimum-spanning-tree)
 5. [Single Source Shortest Path Algorithm](#single-source-shortest-path-algorithm)
+6. [Khan's Algorithm](#khans-algorithm)
 
 ## Disjoint Sets
 
@@ -653,6 +654,11 @@ To address the limitations, we introduce an improved variation of the Bellman-Fo
 
 Instead of choosing among any untraversed edges, as one does by using the “Bellman-Ford” algorithm, the “SPFA” Algorithm uses a “queue” to maintain the next starting vertex of the edge to be traversed. Only when the shortest distance of a vertex is relaxed and that the vertex is not in the “queue”, we add the vertex to the queue. We iterate the process until the queue is empty. At this point, we have calculated the minimum distance from the given vertex to any vertices.
 
+Data structures used here:
+- Adjacency List/Matrix
+- queue
+- seen set
+
 #### Problems
 
 DP Bellman Ford
@@ -674,3 +680,36 @@ class Solution:
             costs = temp
         return costs[dst] if costs[dst] != float("inf") else -1
 ```
+
+## Khan's Algorithm
+
+Khan's Algorithm is a kind of "Topological Sort". Topological Sorting provides a linear sorting based on the required ordering between vertices in directed acyclic graphs. To be specific, given vertices u and v, to reach vertex v, we must have reached vertex u first. In “topological sorting”, u has to appear before v in the ordering. The most popular algorithm for “topological sorting” is Kahn’s algorithm.
+
+Important Concepts:
+- In-Degree -> number of arrows pointing into it
+- Out-Degree -> number of arrows pointing out of it
+
+Steps:
+1. Look at all nodes in graph and make note of their In-degrees. When we see a node with an In-Degree of 0 we add it to the queue.
+2. pop off from queue, marking popped node as visited, and then search the graph for nodes that are pointed at by that popped node, lowering their In-Degrees by 1. For any node that hits an in-degree of 0 should be put into the queue.
+3. When queue is empty and all nodes are marked as completed then we are done.
+
+If there are no nodes with an In-Degree of 0 then there is a cycle, then there is no topological relationship and it cannot be sorted.
+
+Data Structures:
+- queue
+- completed "set"; for marking nodes that have been popped from the queue (test whether this marking of nodes is really required)
+
+Limitations:
+- “Topological sorting” only works with graphs that are directed and acyclic.
+- There must be at least one vertex in the “graph” with an “in-degree” of 0. If all vertices in the “graph” have a non-zero “in-degree”, then all vertices need at least one vertex as a predecessor. In this case, no vertex can serve as the starting vertex.
+
+Complexity Analysis:
+- Time Complexity O(V + E)
+    - First, we will build an adjacency list. This allows us to efficiently check which courses depend on each prerequisite course. Building the adjacency list will take O(E) time, as we must iterate over all edges.
+    - Next, we will repeatedly visit each course (vertex) with an in-degree of zero and decrement the in-degree =of all courses that have this course as a prerequisite (outgoing edges). In the worst-case scenario, we will visit every vertex and decrement every outgoing edge once. Thus, this part will take O(V + E) time.
+    - Therefore the total time complexity is O(E) + O(V+E).
+- Space Complexity O(V+E)
+    - The adjacency list uses O(E) Space
+    - Storing the in-degree for each vertex requires O(V) space.
+    - The queue can contain at most V nodes, so the queue also requires O(V) space.
