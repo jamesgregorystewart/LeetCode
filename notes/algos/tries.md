@@ -4,7 +4,7 @@ Balanced Trees and Hash Tables offer the possibility to search for a word in a d
 - finding all keys with a common prefix
 - enumerating a dataset of strings in lexicographical order
 
-Tries have an additional benefit of not having collisions, and thus not having a worst case time complexity break down to a linearhythmic figure, but instead is maxed at m, the length of the key. Search for a key in a balanced tree is O(mlogn)
+Tries have an additional benefit of not having collisions, and thus not having a worst case time complexity break down to a linear-rhythmic figure, but instead is maxed at m, the length of the key. Search for a key in a balanced tree is O(mlogn)
 
 A Trie will consist of nodes (or defaultdictionaries as we will see in our python solution) that point to children, and there is a terminal indicator which offers insight to where words are.
 
