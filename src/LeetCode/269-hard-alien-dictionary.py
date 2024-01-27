@@ -36,7 +36,7 @@ import collections
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
         if len(words) == 1:
-            return words[0]
+            return "".join(list(set(words[0])))
         # STEP 1: Build the adjacency and degree maps
         lex_order = collections.defaultdict(list)
         in_degree = collections.defaultdict(int)

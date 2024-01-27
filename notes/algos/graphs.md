@@ -9,7 +9,7 @@
 3. [Breadth-First Search](#breadth-first-search)
 4. [Minimum-Spanning Tree](#minimum-spanning-tree)
 5. [Single Source Shortest Path Algorithm](#single-source-shortest-path-algorithm)
-6. [Khan's Algorithm](#khans-algorithm)
+6. [Topological Sorting - Khan's Algorithm](#topological-sorting-khans-algorithm)
 
 ## Disjoint Sets
 
@@ -681,7 +681,7 @@ class Solution:
         return costs[dst] if costs[dst] != float("inf") else -1
 ```
 
-## Khan's Algorithm
+## Topological Sorting - Khan's Algorithm
 
 Khan's Algorithm is a kind of "Topological Sort". Topological Sorting provides a linear sorting based on the required ordering between vertices in directed acyclic graphs. To be specific, given vertices u and v, to reach vertex v, we must have reached vertex u first. In “topological sorting”, u has to appear before v in the ordering. The most popular algorithm for “topological sorting” is Kahn’s algorithm.
 
