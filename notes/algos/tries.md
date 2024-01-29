@@ -59,6 +59,7 @@ class WordDictionary:
         wildcard_route = False
         for i, c in enumerate(word):
             if c == ".":
+                # at wildcards we will recursively try all possible paths
                 for key in [k for k in node.keys() if k is not True]:
                     wildcard_route = self.search(word[i + 1 :], node[key])
                     if wildcard_route:
