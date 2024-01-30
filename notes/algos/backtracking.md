@@ -2,6 +2,8 @@
 
 When solving a backtracking problem. You will typically use recursion to try out the different inputs or paths and fallback to try other inputs or paths from a previous state. It involves choosing an option, trying to build a solution incrementally, and abandoning this path (backtracking) as soon as it determines that this path cannot possibly lead to a complete solution.
 
+Although a breadth-first search could also be used to enumerate sollutions, a depth-first search is greatly preferred because it uses much less space. The current state of a search is completely represented by the pathh form the root to the current search depth-first node. This requires space proportional to the hieght of the tree. In breadth-first search, the searchqueue stores all the nodes at the curernt level, which which is proportional to the width of the search tree.
+
 Problem Types: Common backtracking problems include puzzles, combinatorial problems (like permutations, combinations, n-queens), and partitioning problems (like subset sum, palindromic partitions)
 
 Optimizations to look for:
@@ -63,5 +65,37 @@ class Solution:
 
         ans: List[List[str]] = []
         backtrack(0, [])
+        return ans
+```
+
+Problem: [N Queens](https://leetcode.com/problems/n-queens/description/)
+```python
+class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        def backtrack(x, queens, config):
+            if len(config) == n:
+                ans.append(config)
+                return
+            for i in range(n):
+                if safe((x, i), queens):
+                    row = "." * n
+                    row = row[:i] + "Q" + row[i + 1 :]
+                    backtrack(x + 1, queens + [(x, i)], config + [row])
+
+        def safe(position, queens) -> bool:
+            for queen in queens:
+                """
+                Two points are diagonal to each other if the abs diff of in the x-coords
+                and y-coords are equivalent. This is because in a plane, a diagonal
+                in a square or a rectangle has equal horizontal and vertical distances
+                """
+                if position[1] == queen[1] or abs(position[0] - queen[0]) == abs(
+                    position[1] - queen[1]
+                ):
+                    return False
+            return True
+
+        ans: List[List[str]] = []
+        backtrack(0, [], [])
         return ans
 ```
