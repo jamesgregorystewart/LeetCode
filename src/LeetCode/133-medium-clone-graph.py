@@ -8,7 +8,7 @@
 #     public int val;
 #     public List<Node> neighbors;
 # }
-#  
+#
 #
 # Test case format:
 #
@@ -18,7 +18,7 @@
 #
 # The given node will always be the first node with val = 1. You must return the copy of the given node as a reference to the cloned graph.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -41,7 +41,7 @@
 # Input: adjList = []
 # Output: []
 # Explanation: This an empty graph, it does not have any nodes.
-#  
+#
 #
 # Constraints:
 #
@@ -51,19 +51,19 @@
 # There are no repeated edges and no self-loops in the graph.
 # The Graph is connected and all nodes can be visited starting from the given node.
 
-from typing import Optional, List, Dict
+from typing import Optional, Dict
 
 
 class Node:
-    def __init__(self, val = 0, neighbors = None):
+    def __init__(self, val=0, neighbors=None):
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
 
 # Recursive Solution
 class Solution:
-    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-        def dfs(node: Optional['Node']) -> Optional['Node']:
+    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
+        def dfs(node: Optional["Node"]) -> Optional["Node"]:
             if not node:
                 return None
             if node.val in node_map:
@@ -76,3 +76,25 @@ class Solution:
 
         node_map: Dict[int, Node] = {}
         return dfs(node)
+
+
+# BFS Solution
+class Solution:
+    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
+        if not node:
+            return None
+        node_map: Dict[int, Node] = {}
+        import collections
+
+        root = node
+        queue = collections.deque([node])
+        visited = {node: Node(node.val, [])}
+        while queue:
+            node = queue.popleft()
+            for neighbor in node.neighbors:
+                if neighbor not in visited:
+                    visited[neighbor] = Node(neighbor.val, [])
+                    queue.append(neighbor)
+                visited[node].neighbors.append(visited[neighbor])
+
+        return visited[root]
