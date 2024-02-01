@@ -30,41 +30,7 @@
 # All the words in wordList are unique.
 
 
-from typing import List, Set
-
-
-# DFS solution O(n*n!)
-# class Solution:
-#     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
-#         def dfs(word: str, path_length: int, remaining: Set[str]):
-#             if word in remaining:
-#                 remaining.remove(word)
-#             nonlocal shortest_path
-#             if word == endWord:
-#                 shortest_path = min(shortest_path, path_length)
-#                 return
-#             for next_word in next_words(word, remaining):
-#                 remaining.remove(next_word)
-#                 dfs(next_word, path_length + 1, remaining)
-#                 remaining.add(next_word)
-#
-#         def next_words(word, remaining):
-#             for candidate in remaining:
-#                 l, r = 0, len(word) - 1
-#                 while l < r:
-#                     if word[l] == candidate[l]:
-#                         l += 1
-#                     elif word[r] == candidate[r]:
-#                         r -= 1
-#                     else:
-#                         break
-#                 if l == r:
-#                     yield candidate
-#
-#         shortest_path = 5002
-#         dfs(beginWord, 1, set(wordList))
-#         return shortest_path if shortest_path != 5002 else 0
-
+from typing import List
 import collections
 
 
