@@ -14,7 +14,7 @@
 ## Disjoint Sets
 
 Disjoint Sets are often used to determine if two nodes are connected.
-Disjoint Sets are implemented as arrays where the index is the number, and the value
+Disjoint Sets are implemented as arrays where the index is the number, and the valuegraphs.md
 is its parent. When the index and value are the same, then you have found the root.
 
 ### Disjoint Set Implementation
@@ -349,7 +349,7 @@ class Solution:
         def dfs(start) -> bool:
             destinations = self.graph[start]
             if destinations and start == destination:
-                return False
+                return Falsx
             if not destinations:
                 return start == destination
             leads_to_dest = True
@@ -368,6 +368,8 @@ Most advantageous case for "breadth-first search" is to efficiently find the sho
 ### Tips
 
 You can process elements by level by processing the length of the queue at a time. I.e. all nodes 1 level from origin, all nodes 2 levels from origin, etc. This may be useful when trying to find the minimum path from a point, can be either a tree, graph or matrix. Another thing to note here is the use of the is_valid_move() function to check whether the next move is valid or not.
+
+You can also perform a bi-directional BFS wherein you BFS from two endpoints until they meet
 
 Problem: [Shortest Path in Binary Matrix](https://leetcode.com/explore/learn/card/graph/620/breadth-first-search-in-graph/3896/)
 
