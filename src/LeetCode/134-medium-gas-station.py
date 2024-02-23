@@ -50,7 +50,7 @@ class Solution:
                 global_min = i
             tank = next_tank
         for i in range(global_min, global_min + len(gas)):
-            if cost[i % len(gas)] > gas[i % len(gas)] or gas[i] == 0:
+            if cost[i % len(gas)] > gas[i % len(gas)] or gas[i % len(gas)] == 0:
                 continue
             global_min = i % len(gas)
             break

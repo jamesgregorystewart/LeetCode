@@ -5,7 +5,7 @@
 # For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
 # You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -18,7 +18,7 @@
 # Input: tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
 # Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
 # Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"] but it is larger in lexical order.
-#  
+#
 #
 # Constraints:
 #
@@ -74,11 +74,11 @@ class Solution(object):
 
         # sort the itinerary based on the lexical order
         for origin, itinerary in self.flightMap.items():
-        # Note that we could have multiple identical flights, i.e. same origin and destination.
+            # Note that we could have multiple identical flights, i.e. same origin and destination.
             itinerary.sort(reverse=True)
 
         self.result = []
-        self.DFS('JFK')
+        self.DFS("JFK")
 
         # reconstruct the route backwards
         return self.result[::-1]
@@ -86,7 +86,7 @@ class Solution(object):
     def DFS(self, origin):
         destList = self.flightMap[origin]
         while destList:
-            #while we visit the edge, we trim it off from graph.
+            # while we visit the edge, we trim it off from graph.
             nextDest = destList.pop()
             self.DFS(nextDest)
         self.result.append(origin)
@@ -94,11 +94,101 @@ class Solution(object):
 
 solution = Solution()
 # print(solution.findItinerary(tickets = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]))
-print(solution.findItinerary(tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]))
+print(
+    solution.findItinerary(
+        tickets=[
+            ["JFK", "SFO"],
+            ["JFK", "ATL"],
+            ["SFO", "ATL"],
+            ["ATL", "JFK"],
+            ["ATL", "SFO"],
+        ]
+    )
+)
 # print(solution.findItinerary(tickets = [["JFK","ATL"],["ATL","JFK"]]))
 # print(solution.findItinerary(tickets = [["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]))
 # print(solution.findItinerary(tickets = [["EZE","AXA"],["TIA","ANU"],["ANU","JFK"],["JFK","ANU"],["ANU","EZE"],["TIA","ANU"],["AXA","TIA"],["TIA","JFK"],["ANU","TIA"],["JFK","TIA"]]))
-print(solution.findItinerary(tickets = [["EZE","TIA"],["EZE","HBA"],["AXA","TIA"],["JFK","AXA"],["ANU","JFK"],["ADL","ANU"],["TIA","AUA"],["ANU","AUA"],["ADL","EZE"],["ADL","EZE"],["EZE","ADL"],["AXA","EZE"],["AUA","AXA"],["JFK","AXA"],["AXA","AUA"],["AUA","ADL"],["ANU","EZE"],["TIA","ADL"],["EZE","ANU"],["AUA","ANU"]]))
+print(
+    solution.findItinerary(
+        tickets=[
+            ["EZE", "TIA"],
+            ["EZE", "HBA"],
+            ["AXA", "TIA"],
+            ["JFK", "AXA"],
+            ["ANU", "JFK"],
+            ["ADL", "ANU"],
+            ["TIA", "AUA"],
+            ["ANU", "AUA"],
+            ["ADL", "EZE"],
+            ["ADL", "EZE"],
+            ["EZE", "ADL"],
+            ["AXA", "EZE"],
+            ["AUA", "AXA"],
+            ["JFK", "AXA"],
+            ["AXA", "AUA"],
+            ["AUA", "ADL"],
+            ["ANU", "EZE"],
+            ["TIA", "ADL"],
+            ["EZE", "ANU"],
+            ["AUA", "ANU"],
+        ]
+    )
+)
 
 
 # ans is 21 itinerary elements
+
+
+"""
+Since we aren't seeking shortest path and this is unweighted, we can use a DFS search; specifically we can utilize Hierholzer's algorithm since we are attempting to find a Eulerian path from a static source through all of the destinations
+"""
+
+
+# Attempt 2
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        self.flight_map = collections.defaultdict(list)
+        for source, dest in tickets:
+            self.flight_map[source].append(dest)
+        for _, destinations in self.flight_map.items():
+            destinations.sort(reverse=True)
+
+        ans = ["JFK"]
+
+        def dfs(source):
+            destinations = self.flight_map[source]
+            while destinations:
+                next_dest = destinations.pop()
+                dfs(next_dest)
+            ans.append(source)
+
+        dfs("JFK")
+        return ans[::-1]
+
+
+print(
+    solution.findItinerary(
+        tickets=[
+            ["EZE", "TIA"],
+            ["EZE", "HBA"],
+            ["AXA", "TIA"],
+            ["JFK", "AXA"],
+            ["ANU", "JFK"],
+            ["ADL", "ANU"],
+            ["TIA", "AUA"],
+            ["ANU", "AUA"],
+            ["ADL", "EZE"],
+            ["ADL", "EZE"],
+            ["EZE", "ADL"],
+            ["AXA", "EZE"],
+            ["AUA", "AXA"],
+            ["JFK", "AXA"],
+            ["AXA", "AUA"],
+            ["AUA", "ADL"],
+            ["ANU", "EZE"],
+            ["TIA", "ADL"],
+            ["EZE", "ANU"],
+            ["AUA", "ANU"],
+        ]
+    )
+)
