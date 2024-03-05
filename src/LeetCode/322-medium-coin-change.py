@@ -4,7 +4,7 @@
 #
 # You may assume that you have an infinite number of each kind of coin.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -19,7 +19,7 @@
 #
 # Input: coins = [1], amount = 0
 # Output: 0
-#  
+#
 #
 # Constraints:
 #
@@ -46,17 +46,17 @@ from typing import List
 # print(solution.coinChange(coins=[1, 2, 5], amount=11))
 
 
-
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [0] + [float('inf')] * amount
-        for i in range(1, amount+1):
+        dp = [0] + [float("inf")] * amount
+        for i in range(1, amount + 1):
             for coin in coins:
                 if coin <= i:
-                    dp[i] = min(dp[i], dp[i-coin] + 1)
-        return dp[amount] if dp[amount] != float('inf') else -1
+                    dp[i] = min(dp[i], dp[i - coin] + 1)
+        return dp[amount] if dp[amount] != float("inf") else -1
+
 
 solution = Solution()
-print(solution.coinChange(coins = [1,2,5], amount = 11))
-print(solution.coinChange(coins = [2], amount = 3))
-print(solution.coinChange(coins = [1,2,5], amount = 11))
+print(solution.coinChange(coins=[1, 2, 5], amount=11))
+print(solution.coinChange(coins=[2], amount=3))
+print(solution.coinChange(coins=[1, 2, 5], amount=11))
