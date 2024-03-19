@@ -4,6 +4,8 @@ It is frequently useful to sort inputs of interval problems. Additional tools to
 
 Interval problems with non-sorted inputs typically have a time complexity of O(nlogn) or similar.
 
+Prefix sums may also be of use. Count how many occurences of each sum exist.
+
 Sample problems:
 [Insert Interval](https://leetcode.com/problems/insert-interval/description/)
 [Merge Intervals](https://leetcode.com/problems/merge-intervals/description/)

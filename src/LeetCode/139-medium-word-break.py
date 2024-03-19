@@ -2,7 +2,7 @@
 #
 # Note that the same word in the dictionary may be reused multiple times in the segmentation.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -19,7 +19,7 @@
 #
 # Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
 # Output: false
-#  
+#
 #
 # Constraints:
 #
@@ -29,23 +29,36 @@
 # s and wordDict[i] consist of only lowercase English letters.
 # All the strings of wordDict are unique.
 
+"""
+Intuition:
+Work through word backwards. When a word made from the substring s[len(s)-i:] is found in the dict, and that word concatenated with the word that starts after the end of the found word makes up the rest of the string s, then add that concatened word to dp[i].
+
+States:
+1) all substrings of length i from len(s) - i to end made up of words from word dict.
+"""
+
 
 from typing import List
 
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        dp: List[str] = [""] * (len(s)+1)
-        for i in range(len(s)+1, -1, -1):
+        dp: List[str] = [""] * (len(s) + 1)
+        # Iterate over all states
+        for i in range(len(s) + 1, -1, -1):
+            # iterate over all possible words; there could be multiple per i
             for word in wordDict:
-                if (len(word) <= len(s)-i and word == s[i:i+len(word)]
-                        and len(word) + len(dp[i+len(word)]) == len(s) - i):
-                    dp[i] = word + dp[i+len(word)]
+                if (
+                    len(word) <= len(s) - i
+                    and word == s[i : i + len(word)]
+                    and len(word) + len(dp[i + len(word)]) == len(s) - i
+                ):
+                    dp[i] = word + dp[i + len(word)]
         return dp[0] == s
 
 
 solution = Solution()
-print(solution.wordBreak(s = "leetcode", wordDict = ["leet","code"]))
-print(solution.wordBreak(s = "applepenapple", wordDict = ["apple","pen"]))
-print(solution.wordBreak(s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]))
-print(solution.wordBreak(s = "abcd", wordDict = ["a", "abc", "b", "cd"]))
+print(solution.wordBreak(s="leetcode", wordDict=["leet", "code"]))
+print(solution.wordBreak(s="applepenapple", wordDict=["apple", "pen"]))
+print(solution.wordBreak(s="catsandog", wordDict=["cats", "dog", "sand", "and", "cat"]))
+print(solution.wordBreak(s="abcd", wordDict=["a", "abc", "b", "cd"]))

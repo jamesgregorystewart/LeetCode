@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
+class Solution
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         def helper(node, depth) -> int:
             if node is None:

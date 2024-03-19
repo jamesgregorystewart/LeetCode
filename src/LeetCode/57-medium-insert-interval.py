@@ -37,7 +37,7 @@ class Solution:
     ) -> List[List[int]]:
         insert_index = bisect.bisect_left(intervals, newInterval)
         intervals.insert(insert_index, newInterval)
-        ans = []
+        ans: List[int] = []
 
         for i in range(len(intervals)):
             if not ans or ans[-1][1] < intervals[i][0]:
@@ -46,6 +46,37 @@ class Solution:
                 ans[-1][1] = max(ans[-1][1], intervals[i][1])
 
         return ans
+
+
+# class Solution:
+#     def insert(
+#         self, intervals: List[List[int]], newInterval: List[int]
+#     ) -> List[List[int]]:
+#         ans = []
+#         insert_interval = newInterval
+#         inserted = False
+#         for interval in intervals:
+#             if (newInterval[1] >= interval[0] and newInterval[1] <= interval[1]) or (
+#                 newInterval[0] >= interval[0]
+#                 and newInterval[0] <= interval[1]
+#                 or (newInterval[0] <= interval[0] and newInterval[1] >= interval[1])
+#             ):
+#                 # there is overlap
+#                 insert_interval = [
+#                     min(interval[0], insert_interval[0]),
+#                     max(interval[1], insert_interval[1]),
+#                 ]
+#                 inserted = True
+#             else:
+#                 if inserted:
+#                     ans.append(insert_interval)
+#                 ans.append(interval)
+#         if not inserted:
+#             if not intervals or intervals[0][0] > newInterval[1]:
+#                 return [newInterval] + intervals
+#             else:
+#                 return intervals + [newInterval]
+#         return ans
 
 
 solution = Solution()

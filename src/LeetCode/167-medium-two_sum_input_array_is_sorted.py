@@ -8,7 +8,7 @@
 #
 # Your solution must use only constant extra space.
 #
-#  
+#
 #
 # Example 1:
 #
@@ -38,21 +38,50 @@ Space: O(1)
 from bisect import *
 from typing import List
 
+
+# class Solution:
+#     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+#         ptr = 0
+#         while ptr < len(numbers):
+#             complement_ptr = bisect_left(numbers, target - numbers[ptr])
+#             if ptr == complement_ptr:
+#                 complement_ptr += 1
+#             if (
+#                 complement_ptr < len(numbers)
+#                 and numbers[complement_ptr] == target - numbers[ptr]
+#             ):
+#                 return [ptr + 1, complement_ptr + 1]
+#             ptr += 1
+
+
+# class Solution:
+#     def twoSum(self, numbers: List[int], target: int) -> List[int]:
+#         number_map = {}
+#         for i, num in enumerate(numbers):
+#             number_map[num] = i
+#         for i, num in enumerate(numbers):
+#             if target - num in number_map:
+#                 return [i + 1, number_map[target - num] + 1]
+#         return []
+
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        ptr = 0
-        while ptr < len(numbers):
-            complement_ptr = bisect_left(numbers, target - numbers[ptr])
-            if ptr == complement_ptr:
-                complement_ptr += 1
-            if complement_ptr < len(numbers) and numbers[complement_ptr] == target - numbers[ptr]:
-                return [ptr+1, complement_ptr+1]
-            ptr += 1
+        l = 0
+        r = len(numbers) - 1
+        while l < r:
+            if numbers[l] + numbers[r] > target:
+                r -= 1
+            elif numbers[l] + numbers[r] < target:
+                l += 1
+            else:
+                return [l + 1, r + 1]
+        return []
+
 
 solution = Solution()
-print(solution.twoSum([2,7,11,15], 9))
-print(solution.twoSum([2,3,4], 6))
+print(solution.twoSum([2, 7, 11, 15], 9))
+print(solution.twoSum([2, 3, 4], 6))
 print(solution.twoSum([-1, 0], -1))
-print(solution.twoSum([0,0,3,4], 0))
+print(solution.twoSum([0, 0, 3, 4], 0))
 print(solution.twoSum([5, 25, 75], 100))
-
