@@ -84,7 +84,7 @@ class Solution {
 ```
 
 ## Deleting in a BST
-1. If the target node has no child, we can simpoly remove the node.
+1. If the target node has no child, we can simply remove the node.
 2. If the target has one child, we can use its child to replace itself.
 3. If the target has two children, replace the node with its in-order successor or predecessor node and delete that node.
 ```python
@@ -126,4 +126,52 @@ class Solution:
                 root.val = self.successor(root)
                 root.right = self.deleteNode(root.right, root.val)
         return root
+```
+
+
+## Problems
+[Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/?envType=study-plan-v2&envId=top-interview-150)
+What I like about it:
+- Simple and easy O(n) solution with a unique and interesting optimized solution requiring binary search and lots of variable management.
+```python
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+
+        def compute_depth(root) -> int:
+            d = 0
+            while root and root.left:
+                root = root.left
+                d += 1
+            return d
+
+        def exists(target, depth, root) -> bool:
+            node = root
+            left, right = 0, (2**depth) - 1
+            for _ in range(depth):
+                index = left + (right - left) // 2
+                if index >= target:
+                    node = node.left
+                    right = index - 1
+                else:
+                    node = node.right
+                    left = index + 1
+            return node is not None
+    
+        # get depth of complete tree by checking leftmost branch
+        depth = compute_depth(root)
+        if depth == 0:
+            return 1
+
+        left, right = 1, (2**depth) - 1
+        while left <= right:
+            target = left + (right - left) // 2
+            if exists(target, depth, root):
+                left = target + 1
+            else:
+                right = target - 1
+
+        # There are 2**d - 1 nodes above bottom depth level, then add how many nodes are in the bottom level (i.e. the left pointer which is 0-indexed)
+        return (2**depth - 1) + left
 ```
