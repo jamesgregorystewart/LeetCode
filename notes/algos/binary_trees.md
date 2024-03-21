@@ -132,7 +132,9 @@ class Solution:
 ## Problems
 [Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/?envType=study-plan-v2&envId=top-interview-150)
 What I like about it:
-- Simple and easy O(n) solution with a unique and interesting optimized solution requiring binary search and lots of variable management.
+
+Simple and easy O(n) solution with a unique and interesting optimized solution requiring binary search and lots of variable management. Intuition is that left-most branch has the depth. There are 2**d elements at every level (0-indexed). There are 2**d-1 elements above any level. Once we know how many elements there should be total, we just need an efficient way to see how many are missing. Instead of checking the entire bottom row, we can do a binary search from the root to the bottom checking if the node at the anticipated depth is present, if not we adjust our search left or right accordingly until our index pointers cross, at which point we know how many nodes are in the bottom row.
+
 ```python
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:

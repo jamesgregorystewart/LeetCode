@@ -174,6 +174,48 @@ class UnionFind:
         return self.find(x) == self.find(y)
 ```
 
+### Example UnionFind with no size initialization and sets instead of arrays
+```python
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        uf = UnionFind()
+        for v1, v2 in edges:
+            if uf.connected(v1, v2):
+                return [v1, v2]
+            uf.union(v1, v2)
+        return []
+
+
+class UnionFind:
+    def __init__(self) -> None:
+        self.root = {}
+        self.rank = {}
+
+    def find(self, x: int) -> int:
+        if x not in self.root:
+            self.root[x] = x
+            self.rank[x] = 1
+        if self.root[x] == x:
+            return x
+        self.root[x] = self.find(self.root[x])
+        return self.root[x]
+
+    def union(self, x: int, y: int) -> None:
+        rootX = self.find(x)
+        rootY = self.find(y)
+        if rootX != rootY:
+            if self.rank[rootX] > self.rank[rootY]:
+                self.root[rootY] = self.root[rootX]
+            elif self.rank[rootY] > self.rank[rootX]:
+                self.root[rootX] = self.root[rootY]
+            else:
+                self.root[rootY] = self.root[rootX]
+                self.rank[rootX] += 1
+
+    def connected(self, x: int, y: int) -> bool:
+        return self.find(x) == self.find(y)
+```
+
 Putting our two optimization to QuickUnion Disjoint Sets together we can achieve a Time Complexity Table of
 | Union-find Constructor | Find | Union | Connected |
 | ----- | ------ | ----- | ------ |
@@ -715,3 +757,66 @@ Complexity Analysis:
     - The adjacency list uses O(E) Space
     - Storing the in-degree for each vertex requires O(V) space.
     - The queue can contain at most V nodes, so the queue also requires O(V) space.
+
+### Problems
+
+[Course Schedule](https://leetcode.com/problems/course-schedule/)
+```python
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        adj_list = collections.defaultdict(list)
+        in_degree = collections.defaultdict(int)
+        completed = 0
+
+        for c, p in prerequisites:
+            adj_list[p].append(c)
+            in_degree[c] += 1
+
+        starters = [i for i in range(numCourses) if i not in in_degree]
+        queue = collections.deque(starters)
+        while queue:
+            c = queue.popleft()
+            for course in adj_list[c]:
+                in_degree[course] -= 1
+                if in_degree[course] == 0:
+                    queue.append(course)
+            completed += 1
+        return completed == numCourses
+```
+
+[Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/)
+```python
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        completed = set()
+        result = []
+        adj_list = collections.defaultdict(list)
+        in_degree = collections.defaultdict(int)
+
+        for course, prereq in prerequisites:
+            adj_list[prereq].append(course)
+            in_degree[prereq] += 0
+            in_degree[course] += 1
+
+        queue = collections.deque([k for k, v in in_degree.items() if v == 0])
+
+        while queue:
+            cur_course = queue.popleft()
+            result.append(cur_course)
+            completed.add(cur_course)
+            for downstream_course in adj_list[cur_course]:
+                in_degree[downstream_course] -= 1
+                if in_degree[downstream_course] == 0:
+                    queue.append(downstream_course)
+
+        """
+        Want to make sure we add all the courses which have no prerequisites
+        """
+        if len(completed) < numCourses:
+            for i in range(numCourses):
+                if i not in in_degree and i not in completed:
+                    result.append(i)
+                    completed.add(i)
+
+        return result if len(result) == numCourses else []
+```
