@@ -36,3 +36,30 @@ class Solution:
 
     return False
 ```
+
+## Cycle Sort
+
+Cycle Sort is a sorting algorithm that can sort a given sequence in a range from a to n by putting each element at the index that corresonds to its value.
+
+In the below problem we can leverage this sorting technique and then returning the first index i+1 where nums[i] != i+1.
+
+[First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+
+```python
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        i, n = 0, len(nums)
+        while i < n:
+            correct_idx = nums[i] - 1
+            if 0 < nums[i] < n and nums[i] != nums[correct_idx]:
+                nums[i], nums[correct_idx] = nums[correct_idx], nums[i]
+            else:
+                i += 1
+
+        for i, num in enumerate(nums):
+            if i + 1 != num:
+                return i + 1
+
+        return n + 1
+```
+

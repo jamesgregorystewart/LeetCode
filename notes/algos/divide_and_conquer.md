@@ -31,3 +31,39 @@ class Solution:
         # return the length of string where there are no invalid characters
         return len(s)
 ```
+
+[Sort List](https://leetcode.com/problems/sort-list)
+```python
+class Solution:
+    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
+        mid = self.getMid(head)
+        left = self.sortList(head)
+        right = self.sortList(mid)
+        return self.merge(left, right)
+
+    def merge(self, left, right) -> Optional[ListNode]:
+        dummy = ListNode(0)
+        tail = dummy
+        while left and right:
+            if left.val < right.val:
+                tail.next = left
+                left = left.next
+                tail = tail.next
+            else:
+                tail.next = right
+                right = right.next
+                tail = tail.next
+        tail.next = left if left else right
+        return dummy.next
+
+    def getMid(self, head) -> Optional[ListNode]:
+        midPrev = None
+        while head and head.next:
+            midPrev = head if not midPrev else midPrev.next
+            head = head.next.next
+        mid = midPrev.next
+        midPrev.next = None
+        return mid
+```

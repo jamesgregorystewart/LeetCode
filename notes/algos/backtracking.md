@@ -66,7 +66,7 @@ class Solution:
         ans: List[List[str]] = []
         backtrack(0, [])
         return ans
-```
+``
 
 Problem: [N Queens](https://leetcode.com/problems/n-queens/description/)
 ```python
@@ -99,3 +99,121 @@ class Solution:
         backtrack(0, [], [])
         return ans
 ```
+
+[Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number)
+
+```python
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        if len(digits) == 0:
+            return []
+
+        letters = {
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz",
+        }
+
+        def backtrack(index, path) -> None:
+            if index == len(digits):
+                combinations.append("".join(path))
+                return
+
+            for letter in letters[digits[index]]:
+                path.append(letter)
+                backtrack(index + 1, path)
+                path.pop()
+
+        combinations = []
+        backtrack(0, [])
+        return combinations
+```
+
+
+[Combinations](https://leetcode.com/problems/combinations/)
+
+```python
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+
+        def backtrack(i, combo) -> None:
+            if len(combo) == k:
+                combinations.append(combo[:]) # combo[:] returns a shallow copy here
+                return
+
+            for num in range(i, n + 1):
+                combo.append(num)
+                backtrack(num + 1, combo)
+                combo.pop()
+
+        combinations = []
+        backtrack(1, [])
+
+        return combinations
+```
+
+[Permutations](https://leetcode.com/problems/permutations)
+```python
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+
+        def backtrack(perm, used) -> None:
+            if len(perm) == len(nums):
+                permutations.append(perm[:])
+                return
+
+            for num in nums:
+                if num not in used: 
+                    perm.append(num)
+                    used.add(num)
+                    backtrack(perm, used)
+                    perm.pop()
+                    used.remove(num)
+
+        permutations = []
+        backtrack([], set())
+        return permutations
+
+```
+
+[N-Queens II](https://leetcode.com/problems/n-queens-ii)
+```python
+class Solution:
+    def totalNQueens(self, n: int) -> int:
+        def backtrack(row, rows, cols, diags1, diags2) -> None:
+            if row == n:
+                self.totalQueens += 1
+                return
+
+            for col in range(n):
+                diag1 = row - col
+                diag2 = row + col
+                if (
+                    row not in rows
+                    and col not in cols
+                    and diag1 not in diags1
+                    and diag2 not in diags2
+                ):
+                    rows.add(row)
+                    cols.add(col)
+                    diags1.add(diag1)
+                    diags2.add(diag2)
+                    backtrack(row + 1, rows, cols, diags1, diags2)
+                    rows.remove(row)
+                    cols.remove(col)
+                    diags1.remove(diag1)
+                    diags2.remove(diag2)
+
+        self.totalQueens = 0
+        backtrack(0, set(), set(), set(), set())
+        return self.totalQueens
+```
+
+Key insights to solving this problem:
+- labeling the diagonals and keeping them in sets. There are diagonals that go top left to bottom right, and diags that go top right to bottom left; We can identify a diagonal by using arithmetic on the row and col for a placement
+- Once we have made a placement, we go to the next row, and we iterate over the columns in the range

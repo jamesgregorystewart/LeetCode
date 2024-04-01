@@ -211,3 +211,36 @@ Pseudocode for the algorithm:
 4. return best
 ```
 Line *3.1* is where the magic happens. If current has become less than 0 from including too many or too large negative numbers, the algorithm "throws it away" and resets.
+
+
+## Examples
+
+[Find the Sum of Subsequence Powers](https://leetcode.com/problems/find-the-sum-of-subsequence-powers)
+
+```python
+class Solution:
+    def sumOfPowers(self, nums: List[int], k: int) -> int:
+        MOD = 10**9 + 7
+        nums.sort()
+        ans = 0
+
+        @lru_cache(None)
+        def dp(idx, min_diff, last_choose, left_k):
+            if left_k == 0:
+                if min_diff != float("inf"):
+                    return min_diff
+                else:
+                    return 0
+            if idx == len(nums):
+                return 0
+            choose = dp(
+                idx + 1,
+                min(min_diff, abs(last_choose - nums[idx])),
+                nums[idx],
+                left_k - 1,
+            )
+            not_choose = dp(idx + 1, min_diff, last_choose, left_k)
+            return (choose + not_choose) % MOD
+
+        return dp(0, float("inf"), float("inf"), k)
+```
