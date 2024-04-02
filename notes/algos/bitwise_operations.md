@@ -1,5 +1,11 @@
 # Bitwise Operations
 
+Practical Applications:
+- Setting a bit `num |= (1 << i)`
+- Clearing a bit `num &= ~(1 << i)`
+- Toggling a bit `num ^= (1 << i)`
+- Checking a bit `(num & (1 << i)) != 0`
+
 [Shortest Subarry with OR at Least K II](https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii)
 
 ```python

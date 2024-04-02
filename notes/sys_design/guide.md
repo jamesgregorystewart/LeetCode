@@ -1,3 +1,19 @@
+# Exposition
+
+Where to practice: draw.io
+
+Thoughts on Back of Envelope Estimations:
+- as you gather requirements write down estimates for Daily user count, peak user count, read and write queries per second where applicable
+
+Data Types:
+- char: 1-4 bytes depending on ASCII or UTF-8; 2 is reasonable
+- int: 4 bytes
+- bigint: 8 bytes
+- timestamp: 8 bytes
+- lat/long: 8 bytes each
+- seconds in day: 86,400 or 10^5 (100,000)
+
+
 # This will be a Step by Step Guide of a System Design Interview
 
 Problem Statement: Let's design a system that counts things at scale.
@@ -19,7 +35,7 @@ Why is it important? From the interviewer's perspective:
 - This quality is important for the daily job
 
 From the Interviewee's perspective:
-- We need to make sure we know what the right set of technologies we need to consider to solve the problem. Let's let the interviewer make the job easier for us by guiding our solution and adding constraints and requirements.
+- We need to make sure we know what the right set of technlogies we need to consider to solve the problem. Let's let the interviewer make the job easier for us by guiding our solution and adding constraints and requirements.
 
 ### Requirements Clarification
 
