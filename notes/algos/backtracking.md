@@ -217,3 +217,40 @@ class Solution:
 Key insights to solving this problem:
 - labeling the diagonals and keeping them in sets. There are diagonals that go top left to bottom right, and diags that go top right to bottom left; We can identify a diagonal by using arithmetic on the row and col for a placement
 - Once we have made a placement, we go to the next row, and we iterate over the columns in the range
+
+[Word Search](https://leetcode.com/problems/word-search)
+
+```python
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        def backtrack(x, y, index) -> bool:
+            # If we've matched entire word, return
+            if index == len(word):
+                return True
+            
+            # if point is out of bounds or doesn't match next letter, return False
+            if x < 0 or x >= len(board) or y < 0 or \
+                y >= len(board[0]) or board[x][y] != word[index]:
+                return False
+            
+            # store value at point, set to hashtag to mark as 'seen'
+            temp, board[x][y] = board[x][y], '#'
+
+            # visit neighbors
+            exists = backtrack(x + 1, y, index + 1) or \
+                     backtrack(x, y + 1, index + 1) or \
+                     backtrack(x - 1, y, index + 1) or \
+                     backtrack(x, y - 1, index + 1)
+
+            # reset the value at board
+            board[x][y] = temp
+
+            return exists
+
+        # attempt from every starting position
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if backtrack(i, j, 0):
+                    return True
+        return False
+```
