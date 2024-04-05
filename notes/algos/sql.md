@@ -2,7 +2,7 @@
 
 [Calculate Special Bonus](https://leetcode.com/explore/learn/card/sql-language/683/sql-syntax/4321/)
 
-```PostgreSQL
+```SQL
 select employee_id, 
         case 
             when employee_id % 2 = 1 and name not like 'M%' then salary
@@ -13,7 +13,7 @@ from employees order by employee_id;
 
 [Swap Salary](https://leetcode.com/explore/learn/card/sql-language/683/sql-syntax/4323/)
 
-```PostgreSQL
+```SQL
 update salary 
 set sex =
     case
