@@ -20,15 +20,18 @@ def find_kth_smallest(nums, k, m):
         # Add the current window's kth smallest to the result
         # Adjust for the elements that are in the heap but should be ignored
         count = 0
-        while count < k:
+        heap_store = []
+        while window and count < k:
             smallest = heapq.heappop(window)
+            heap_store.append(smallest)
             if to_be_removed[smallest]:
                 to_be_removed[smallest] -= 1
                 continue
             count += 1
             if count == k:
                 result.append(smallest)
-            heapq.heappush(window, smallest)
+        while heap_store:
+            heapq.heappush(window, heap_store.pop())
         
         if i == len(nums):
             break
@@ -47,3 +50,33 @@ k = 2
 m = 3
 print(find_kth_smallest(nums, k, m))
 ```
+
+[Max Sliding Window](https://leetcode.com/problems/sliding-window-maximum/)
+
+```python
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        if k == 1:
+            return nums
+        max_heap = [num * -1 for num in nums[:k]]
+        heapq.heapify(max_heap)
+        removed = defaultdict(int)
+
+        n = len(nums)
+        result = []
+        for i in range(k, n + 1):
+            while (max_val := -max_heap[0]) in removed and removed[max_val]:
+                removed[max_val] -= 1
+                heapq.heappop(max_heap)
+                continue
+            result.append(max_val)
+
+            if i == n:
+                break
+
+            removed[nums[i - k]] += 1
+            heapq.heappush(max_heap, nums[i] * -1)
+        return result
+```
+
+This was overkill because I only needed to find the max in a range, thus a monotonic stack would be more efficient; nonetheless good practice for a heap

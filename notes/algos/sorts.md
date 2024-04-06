@@ -10,16 +10,27 @@ Template:
 3. Distribute Elements into Buckets: Iterate over the input array, placing each element into the appropriate bucket. The bucket is typically chosen based on the element's value in relation to the overall range.
 4. Sort Buckets: Individually sort the elements within each bucket. This can be done using any sorting algorithm, but often, a simple algorithm like insertion sort is used because buckets typically contain a small number of elements.
 
+For an MD (Markdown) file, you can present the formula using a combination of text and code blocks for clarity. Here's how you could structure it:
+
+---
 
 **Optimal Gap in Bucket Sort:**
 
 - **Uniform Gap Scenario:** In an ideal case for bucket sort, elements in the array are evenly distributed with a uniform gap between adjacent elements.
-- **Gap Calculation:** For \(n\) elements, the uniform gap (\(t\)) between any two adjacent elements is calculated as \(t = \frac{\text{max} - \text{min}}{n - 1}\), where \(max\) and \(min\) are the maximum and minimum values in the array, respectively.
+
+- **Gap Calculation:** For \(n\) elements, the uniform gap (\(t\)) between any two adjacent elements is calculated as follows:
+
+  ```
+  t = (max - min) / (n - 1)
+  ```
+
+  Where `max` and `min` are the maximum and minimum values in the array, respectively.
+
 - **Significance:** This uniform gap represents the optimal distance between elements, guiding the ideal bucket range or size in bucket sort. It ensures that the sorting within each bucket is as efficient as possible by minimizing the work needed to sort elements within buckets.
 
 ---
 
-This summary encapsulates the concept of how an optimal, uniform gap between array elements relates to the efficiency of bucket sort in an ideal distribution scenario.
+This format should integrate well into most Markdown viewers, providing a clear and concise explanation along with an easy-to-understand formula representation.
 
 Problem: [Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/description/)
 ```python
@@ -116,6 +127,37 @@ class Solution:
 Here I create a bucket for each possible number in a range between the max and the min values provided. Then increment how many of each occur in the input. After which I loop through the buckets extending the result set. This could also be considered *Counting* sort.
 
 In this example I create a bucket for each frequency.
+
+[Maximum Gap](https://leetcode.com/problems/maximum-gap)
+
+```python
+class Solution:
+    def maximumGap(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return 0
+        max_val, min_val = max(nums), min(nums)
+        n = len(nums)
+        bucket_size = max(1, (max_val - min_val) // (n - 1))
+        num_of_buckets = (max_val - min_val) // bucket_size + 1
+        bucket_min = [float("inf")] * num_of_buckets
+        bucket_max = [float("-inf")] * num_of_buckets
+
+        for num in nums:
+            bucket_idx = (num - min_val) // bucket_size
+            bucket_min[bucket_idx] = min(bucket_min[bucket_idx], num)
+            bucket_max[bucket_idx] = max(bucket_max[bucket_idx], num)
+
+        prev_bucket_max = min_val
+        max_gap = 0
+        for i in range(num_of_buckets):
+            if bucket_min[i] == float("inf") and bucket_max[i] == float("-inf"):
+                continue
+
+            max_gap = max(max_gap, bucket_min[i] - prev_bucket_max)
+            prev_bucket_max = bucket_max[i]
+
+        return max_gap
+```
 
 [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words)
 
