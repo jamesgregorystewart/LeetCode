@@ -1,25 +1,34 @@
 from typing import List
 
+"""
+
+1 2 3 
+
+3 2 1
+
+-1 0 1 1 1  k = 2
+
+-1: 2
+0: 1
+1: 1
+2: 1
+
+
+
+current_sum = -1
+ans = 3
+
+"""
+
 
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        nums.sort()
-        left = right = 0
+        subarray_sums = {0: 1}
+        currentSum = 0
         ans = 0
-        sum = 0
-        while left <= right and right < len(nums):
-            sum += nums[right]
-            if sum < k:
-                right += 1
-            elif sum == k:
-                ans += 1
-                sum -= nums[left]
-                left += 1
-            if sum > k:
-                if sum - nums[right] < k:
-                    sum -= nums[left]
-                    left += 1
-                else:
-                    sum -= nums[right]
-                    right -= 1
+        for num in nums:
+            currentSum += num
+            if currentSum - k in subarray_sums:
+                ans += subarray_sums[currentSum - k]
+            subarray_sums[currentSum] = subarray_sums.get(currentSum, 0) + 1
         return ans

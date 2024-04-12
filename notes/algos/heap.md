@@ -80,3 +80,16 @@ class Solution:
 ```
 
 This was overkill because I only needed to find the max in a range, thus a monotonic stack would be more efficient; nonetheless good practice for a heap
+
+
+[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements)
+
+```python
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        if k == len(nums):
+            return nums 
+
+        counts = Counter(nums)
+        return heapq.nlargest(k, counts.keys(), key=counts.get)
+```
