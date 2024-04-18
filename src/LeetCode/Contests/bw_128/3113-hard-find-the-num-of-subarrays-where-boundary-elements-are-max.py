@@ -2,6 +2,7 @@ from typing import List
 from collections import defaultdict
 
 
+# O(N^2)
 class Solution:
     def numberOfSubarrays(self, nums: List[int]) -> int:
         ans = 0
@@ -16,6 +17,8 @@ class Solution:
         return ans
 
 
+# Hashmap solution O(N + D*K^2) where D is the number of distinct elements with K occurrences; where
+# K > 1
 class Solution:
     def numberOfSubarrays(self, nums: List[int]) -> int:
         index_map = defaultdict(list)
