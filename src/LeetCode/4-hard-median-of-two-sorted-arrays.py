@@ -3,61 +3,67 @@ import unittest
 
 
 class Solution:
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        if not nums1 or not nums2:
-            nonempty = nums1 if nums1 else nums2
-            return (
-                nonempty[(len(nonempty) - 1) // 2]
-                if len(nonempty) % 2
-                else (
-                    (nonempty[(len(nonempty) - 1) // 2] + nonempty[len(nonempty) // 2])
-                    / 2
-                )
-            )
-        n, m = len(nums1), len(nums2)
-        odd = True if (n + m) % 2 else False
-        a = b = 0
-        while a < len(nums1) and b < len(nums2):
-            smaller = a + b
-            greater = m + n - smaller - 2
-            if odd and smaller > greater:
-                print("finding median of odd count")
-                # find the odd median
-                return float(min(nums1[a], nums2[b]))
-            if not odd and smaller == greater:
-                return (nums1[a] + nums2[b]) / 2
-            if a < n - 1 and nums1[a] < nums2[b]:
-                a += 1
+    def findMedianSortedArrays(self, A: List[int], B: List[int]) -> float:
+        na, nb = len(A), len(B)
+        n = na + nb
+
+        def solve(k, a_start, a_end, b_start, b_end):
+            # If the segment of on array is empty, it means we have passed all
+            # its element, just return the corresponding element in the other array.
+            if a_start > a_end:
+                return B[k - a_start]
+            if b_start > b_end:
+                return A[k - b_start]
+
+            # Get the middle indexes and middle values of A and B.
+            a_index, b_index = (a_start + a_end) // 2, (b_start + b_end) // 2
+            a_value, b_value = A[a_index], B[b_index]
+
+            # If k is in the right half of A + B, remove the smaller left half.
+            if a_index + b_index < k:
+                if a_value > b_value:
+                    return solve(k, a_start, a_end, b_index + 1, b_end)
+                else:
+                    return solve(k, a_index + 1, a_end, b_start, b_end)
+            # Otherwise, remove the larger right half.
             else:
-                b += 1
+                if a_value > b_value:
+                    return solve(k, a_start, a_index - 1, b_start, b_end)
+                else:
+                    return solve(k, a_start, a_end, b_start, b_index - 1)
 
-        return 0.0
-
-
-class TestSolution(unittest.TestCase):
-    def setUp(self) -> None:
-        self.solution = Solution()
-
-    def testExample(self):
-        self.assertEqual(
-            self.solution.findMedianSortedArrays(nums1=[1, 3], nums2=[2]), 2.00000
-        )
-
-    def testExample2(self):
-        self.assertEqual(
-            self.solution.findMedianSortedArrays(nums1=[1, 2], nums2=[3, 4]), 2.50000
-        )
-
-    def testAEmpty(self):
-        self.assertEqual(
-            self.solution.findMedianSortedArrays(nums1=[], nums2=[2]), 2.00000
-        )
-
-    def testBEmpty(self):
-        self.assertEqual(
-            self.solution.findMedianSortedArrays(nums1=[1, 3], nums2=[]), 2.00000
-        )
+        if n % 2:
+            return solve(n // 2, 0, na - 1, 0, nb - 1)
+        else:
+            return (
+                solve(n // 2 - 1, 0, na - 1, 0, nb - 1)
+                + solve(n // 2, 0, na - 1, 0, nb - 1)
+            ) / 2
 
 
-if __name__ == "__main__":
-    unittest.main()
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        if len(nums1) > len(nums2):
+            return self.findMedianSortedArrays(nums2, nums1)
+
+        m, n = len(nums1), len(nums2)
+        left, right = 0, m
+
+        while left <= right:
+            partitionA = (left + right) // 2
+            partitionB = (m + n + 1) // 2 - partitionA
+
+            maxLeftA = float("-inf") if partitionA == 0 else nums1[partitionA - 1]
+            minRightA = float("inf") if partitionA == m else nums1[partitionA]
+            maxLeftB = float("-inf") if partitionB == 0 else nums2[partitionB - 1]
+            minRightB = float("inf") if partitionB == n else nums2[partitionB]
+
+            if maxLeftA <= minRightB and maxLeftB <= minRightA:
+                if (m + n) % 2 == 0:
+                    return (max(maxLeftA, maxLeftB) + min(minRightA, minRightB)) / 2
+                else:
+                    return max(maxLeftA, maxLeftB)
+            elif maxLeftA > minRightB:
+                right = partitionA - 1
+            else:
+                left = partitionA + 1
