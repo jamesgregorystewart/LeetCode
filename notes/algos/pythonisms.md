@@ -1,6 +1,4 @@
-# Pythonisms
-
-## Lambdas 
+# Lambdas 
 
 Problem: [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/description/?envType=daily-question&envId=2024-01-30)
 Example using lambdas as values in a matrix to help calculate reverse polish notation
@@ -22,7 +20,36 @@ class Solution:
 
 ```
 
-## Testing Framework
+# Misc
+
+Problem: [Maximum Sum of 3 non-overlapping subarrays](https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays)
+
+```python
+class Solution:
+    def maxSumOfThreeSubarrays(self, nums, k):
+        
+        sm1 = sm2 = sm3 = 0
+        
+        acc = list(accumulate(nums, initial = 0))
+
+        for i, (a0,a1,a2,a3) in enumerate(zip(acc      ,
+                                              acc[k:]  , 
+                                              acc[2*k:], 
+                                              acc[3*k:])):
+            if a1 - a0 > sm1:
+                sm1, idx1 = a1 - a0, i
+
+            if a2 - a1 > sm2 - sm1:
+                sm2, idx2 = sm1 + a2 - a1, (idx1, i+k)
+
+            if a3 - a2 > sm3 - sm2:
+                sm3, idx3 = sm2 + a3 - a2, (*idx2, i+2*k) # *idx2 unpacks an iterable like (0, 2, 4) here
+
+        return idx3
+```
+
+
+# Testing Framework
 
 ### General Testing of classes with methods that return a value
 
@@ -139,3 +166,5 @@ class TestProcessData(unittest.TestCase):
             process_data('data')
             mock_func.assert_called_once_with('data')  # Assert it was called correctly
 ```
+
+

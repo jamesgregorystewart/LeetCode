@@ -1,53 +1,45 @@
-from math import ceil, floor
-import re
+from collections import deque
 
 
 class Solution:
     def calculate(self, s: str) -> int:
-
+        stack = deque()
+        num = 0
+        operand, operator = None, None
         operators = {
-            "+": lambda y, x: x + y,
-            "-": lambda y, x: x - y,
-            "*": lambda y, x: x * y,
-            "/": lambda y, x: (
-                floor(x / y) if (x > 0 and y > 0) or (x < 0 and y < 0) else ceil(x / y)
-            ),
+            "+": lambda x, y: x + y,
+            "-": lambda x, y: x - y,
+            "*": lambda x, y: x * y,
+            "/": lambda x, y: x // y,
         }
+        for c in s:
+            if c == " ":
+                continue
+            elif c.isdigit():
+                num *= 10
+                num += int(c)
+            else:
+                if operand is not None:
+                    stack.append(operators[operator](operand, num))
+                    operand, operator = None, None
+                else:
+                    stack.append(num)
+                if c in ["+", "-"]:
+                    stack.append(c)
+                elif c in ["*", "/"]:
+                    operand = stack.pop()
+                    operator = c
 
-        # get rid of spaces
-        s.replace(" ", "")
+                num = 0
 
-        def get_num(i, direction):
-            j = i
-            while j >= 0 and j < len(s) and s[j].isdigit():
-                j += direction
-            start, end = (i, j) if i < j else (j, i)
-            return start, end, int(s[start : end + 1])
+        if operand is not None:
+            stack.append(operators[operator](operand, num))
+        elif not stack or not stack[-1][-1].isdigit():
+            stack.append(num)
 
-        next_s = ""
-        i = 0
-        while i < len(s):
-            if s[i] in ["*", "/"]:
-                x_start, _, x = get_num(i - 1, -1)
-                _, y_end, y = get_num(i + 1, 1)
-                result = operators[s[i]](y, x)
-                next_s = next_s[:x_start]
-                next_s += str(result)
-                i = y_end
-            i += 1
-        print(next_s)
-
-        while next_s:
-            i = 0
-            while i < len(next_s) and next_s[i].isdigit():
-                i += 1
-            if i == len(next_s):
-                return int(next_s)
-            j = i + 1
-            while j < len(next_s) and next_s[j].isdigit():
-                j += 1
-
-            x = int(next_s[:i])
-            y = int(next_s[i + 1 : j + 1])
-            result = operators[next_s[i]](y, x)
-            next_s = result + next_s[j + 1 :]
+        # Evaluate + and -
+        while stack:
+            if len(stack) == 1:
+                return stack.pop()
+            op1, operator, op2 = stack.popleft(), stack.popleft(), stack.popleft()
+            stack.appendleft(operators[operator](op1, op2))
